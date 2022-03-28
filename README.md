@@ -112,8 +112,8 @@ Attaching only specific component from the [list](https://s3.cloud.cyfronet.pl/e
   <body>
     <eosc-common-main-header
       username="name surname"
-      login-url="https://marketplace.eosc-portal.eu/users/auth/checkin"
-      logout-url="https://marketplace.eosc-portal.eu/users/logout"
+      login-url="https://marketplace.eosc.pl/users/auth/checkin"
+      logout-url="https://marketplace.eosc.pl/users/logout"
     ></eosc-common-main-header>
 
     <script src="https://s3.cloud.cyfronet.pl/eosc-pl-common/main-header.production.min.js"></script>
