@@ -116,7 +116,7 @@ describe("Main Header Component", () => {
       new EoscCommonMainHeader().render(props);
       expect(autoLoginCallSpy).toHaveBeenCalled();
     });
-    test.skip("should create login attempt cookie", async () => {
+    test("should create login attempt cookie", async () => {
       const props = {
         username: "",
         "logout-url": "https://test.pl",
@@ -135,7 +135,7 @@ describe("Main Header Component", () => {
         expires: expect.anything(),
       });
     });
-    test.skip("should create logout attempt cookie", async () => {
+    test("should create logout attempt cookie", async () => {
       const props = {
         username: "logged in user",
         "logout-url": "https://test.pl",
@@ -196,7 +196,7 @@ describe("Main Header Component", () => {
         });
       });
     });
-    test.skip("should skip autologin on logout attempt", async () => {
+    test("should skip autologin on logout attempt", async () => {
       const props = {
         username: "logged in username",
         "logout-url": "https://test.pl",
