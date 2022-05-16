@@ -214,3 +214,9 @@ Use default eosc links with custom links defined via `profile-links`
   profile-links='[{"href": "https://search.marketplace.eosc-portal.eu", "caption": "EOSC Search Service"}]'
 ></EoscCommonMainHeader>
 ```
+
+Handle all missing params
+
+```js
+<EoscCommonMainHeader></EoscCommonMainHeader>
+```
