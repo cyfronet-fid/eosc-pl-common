@@ -53,7 +53,12 @@ class EoscCommonMainHeader extends Component {
       <RWD showOn={["lg", "xl"]}>
         <nav className={`eosc-common top ${environment.production ? "" : "demo"}`}>
           <div className="container">
-            <ul className="right-links">
+            <div className="left-links">
+              <a href="https://eosc-portal.eu" className="header-logo">
+                &nbsp;
+              </a>
+            </div>
+            <ul className="center-links">
               {environment.mainHeaderConfig.map((config) => (
                 <EoscMainHeaderBtn
                   {...{
@@ -65,6 +70,8 @@ class EoscCommonMainHeader extends Component {
                   }}
                 />
               ))}
+            </ul>
+            <ul className="right-links">
               {getAuthBtn(parsedProps)}
             </ul>
           </div>
