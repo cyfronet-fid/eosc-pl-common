@@ -31,20 +31,18 @@ class EoscCommonMainFooter extends Component {
   render(props) {
     const { production, termsOfUse, privacyPolicy} = fieldsToCamelCase(usePropTypes(props, EoscCommonMainFooter));
     return (
-        <div>
-          <footer className={`eosc-common footer pt-3 pb-3 ${production ? "" : "demo"}`}>
-            <div className="container">
-              <EoscMainFooterLogoBar />
-              <EoscMainFooterCols termsOfUse={termsOfUse} privacyPolicy={privacyPolicy} />
-            </div>
-          </footer>
-          <div className="eosc-common copyright container">
-            <span className="copy-text">Copyright 2023 &nbsp;&nbsp; | &nbsp;&nbsp; All rights reserved</span> &nbsp;&nbsp; |  &nbsp;&nbsp;
-            <a href="https://eosc-portal.eu/privacy-policy-summary">
-              Privacy policy
-            </a>
+      <div>
+        <footer className={`eosc-common footer pt-3 pb-3 ${production ? "" : "demo"}`}>
+          <div className="container">
+            <EoscMainFooterCols termsOfUse={termsOfUse} privacyPolicy={privacyPolicy} />
           </div>
+        </footer>
+        <div className="eosc-common copyright container">
+          <span className="copy-text">Copyright 2024 &nbsp;&nbsp; | &nbsp;&nbsp; All rights reserved</span> &nbsp;&nbsp;
+          | &nbsp;&nbsp;
+          <a href="https://eosc-portal.eu/privacy-policy-summary">Privacy policy</a>
         </div>
+      </div>
     );
   }
 }

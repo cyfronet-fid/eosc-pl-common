@@ -6,15 +6,15 @@ Common EOSC header at top of the application.
 
 #### stable
 
-https://s3.cloud.cyfronet.pl/eosc-portal-common/main-header.production.css
+https://s3.cloud.cyfronet.pl/eosc-pl-common/main-header.production.css
 
-https://s3.cloud.cyfronet.pl/eosc-portal-common/main-header.production.js
+https://s3.cloud.cyfronet.pl/eosc-pl-common/main-header.production.js
 
 #### latest
 
-https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/main-header.production.css
+https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/main-header.production.css
 
-https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/main-header.production.js
+https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/main-header.production.js
 
 ### Rendering examples
 

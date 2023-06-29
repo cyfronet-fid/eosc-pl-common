@@ -56,14 +56,15 @@ class EoscCommonMainHeader extends Component {
           <nav className={`eosc-common top ${environment.production ? "" : "demo"}`}>
             <div className="container">
               <div className="left-links">
-                <a href="https://eosc-portal.eu" className="header-logo">
+                <a href="https://eosc.pl/" className="header-logo">
                   &nbsp;
                 </a>
-                <div class="beyond-logo"></div>
               </div>
 
-              <input className="menu-btn" type="checkbox" id="menu-btn"/>
-              <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
+              <input className="menu-btn" type="checkbox" id="menu-btn" />
+              <label className="menu-icon" htmlFor="menu-btn">
+                <span className="navicon" />
+              </label>
 
               <ul className="menu center-links">
                 {environment.mainHeaderConfig.map((config) => (

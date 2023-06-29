@@ -43,9 +43,7 @@ export default class EoscMainHeaderLogoutBtn extends Component {
 
   eoscLinks() {
     const marketplaceUrl = environment.marketplaceUrl;
-    const dashboardUrl = environment.dashboardUrl;
     return [
-      { href: dashboardUrl, caption: "Dashboard" },
       { href: `${marketplaceUrl}/projects`, caption: "My projects" },
       // favourites will be move shortly to dashboard
       // { href: "/favourites", caption: "Favourite resources", "data-e2e": "favourites" },
@@ -61,7 +59,7 @@ export default class EoscMainHeaderLogoutBtn extends Component {
     return (
       <Fragment>
         <li>
-          My EOSC
+          Mój EOSC
           <Dropdown>
             <Dropdown.Toggle as={AccountToggle} />
             <Dropdown.Menu>

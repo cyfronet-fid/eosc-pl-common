@@ -1,7 +1,7 @@
 # EOSC Portal common
 
-[![Stable library documentation](https://github.com/cyfronet-fid/eosc-portal-common/actions/workflows/deploy-stable.yaml/badge.svg?branch=master)](https://s3.cloud.cyfronet.pl/eosc-portal-common/docs/index.html)
-[![Latest library documentation](https://github.com/cyfronet-fid/eosc-portal-common/actions/workflows/deploy-latest.yaml/badge.svg?branch=develop)](https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/docs/index.html)
+[![Stable library documentation](https://github.com/cyfronet-fid/eosc-pl-common/actions/workflows/deploy-stable.yaml/badge.svg?branch=master)](https://s3.cloud.cyfronet.pl/eosc-pl-common/docs/index.html)
+[![Latest library documentation](https://github.com/cyfronet-fid/eosc-pl-common/actions/workflows/deploy-latest.yaml/badge.svg?branch=develop)](https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/docs/index.html)
 
 ### Description
 
@@ -30,7 +30,7 @@ Only for build purposes
 - nodejs >= 14.17.1 LTE
 
 ### Bucket policy update
-Sometimes reading files may not work. To fix the issue run [Update bucket policy workflow](https://github.com/cyfronet-fid/eosc-portal-common/actions/workflows/update-bucket-policy.yaml)
+Sometimes reading files may not work. To fix the issue run [Update bucket policy workflow](https://github.com/cyfronet-fid/eosc-pl-common/actions/workflows/update-bucket-policy.yaml)
 
 ### Dependencies installation
 
@@ -96,13 +96,13 @@ Simple page with custom components
     <div id="eosc-common-eu-information"></div>
     <EoscCommonMainFooter></EoscCommonMainFooter>
 
-    <script src="https://s3.cloud.cyfronet.pl/eosc-portal-common/index.production.min.js"></script>
-    <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-portal-common/index.production.min.css" />
+    <script src="https://s3.cloud.cyfronet.pl/eosc-pl-common/index.production.min.js"></script>
+    <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-pl-common/index.production.min.css" />
   </body>
 </html>
 ```
 
-Attaching only specific component from the [list](https://s3.cloud.cyfronet.pl/eosc-portal-common/docs/index.html)
+Attaching only specific component from the [list](https://s3.cloud.cyfronet.pl/eosc-pl-common/docs/index.html)
 
 ```html
 <!DOCTYPE html>
@@ -117,8 +117,8 @@ Attaching only specific component from the [list](https://s3.cloud.cyfronet.pl/e
       logout-url="https://marketplace.eosc-portal.eu/users/logout"
     ></eosc-common-main-header>
 
-    <script src="https://s3.cloud.cyfronet.pl/eosc-portal-common/main-header.production.min.js"></script>
-    <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-portal-common/main-header.production.min.css" />
+    <script src="https://s3.cloud.cyfronet.pl/eosc-pl-common/main-header.production.min.js"></script>
+    <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-pl-common/main-header.production.min.css" />
   </body>
 </html>
 ```
@@ -130,8 +130,8 @@ Using render toolset to dynamically re-render components
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script src="https://s3.cloud.cyfronet.pl/eosc-portal-common/index.production.min.js"></script>
-    <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-portal-common/index.production.min.css" />
+    <script src="https://s3.cloud.cyfronet.pl/eosc-pl-common/index.production.min.js"></script>
+    <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-pl-common/index.production.min.css" />
   </head>
   <body>
     <eosc-common-main-header
@@ -159,77 +159,77 @@ Using render toolset to dynamically re-render components
 ### Library instances URLs
 
 `index.min.js` and `index.mn.css` contains all library components. Other scripts and styles will be named as components.
-See full components [list](https://s3.cloud.cyfronet.pl/eosc-portal-common/docs/index.html).
+See full components [list](https://s3.cloud.cyfronet.pl/eosc-pl-common/docs/index.html).
 
 #### Stable library instance
 
-URL base: https://s3.cloud.cyfronet.pl/eosc-portal-common/
+URL base: https://s3.cloud.cyfronet.pl/eosc-pl-common/
 
-Components documentation: https://s3.cloud.cyfronet.pl/eosc-portal-common/docs/index.html
+Components documentation: https://s3.cloud.cyfronet.pl/eosc-pl-common/docs/index.html
 
 **Examples**
 
 All components
 
 ```text
-https://s3.cloud.cyfronet.pl/eosc-portal-common/index.production.css
-https://s3.cloud.cyfronet.pl/eosc-portal-common/index.production.js
+https://s3.cloud.cyfronet.pl/eosc-pl-common/index.production.css
+https://s3.cloud.cyfronet.pl/eosc-pl-common/index.production.js
 ```
 
 Specific component
 
 ```text
-https://s3.cloud.cyfronet.pl/eosc-portal-common/main-header.development.css
-https://s3.cloud.cyfronet.pl/eosc-portal-common/main-header.production.js
+https://s3.cloud.cyfronet.pl/eosc-pl-common/main-header.development.css
+https://s3.cloud.cyfronet.pl/eosc-pl-common/main-header.production.js
 ```
 
 #### Latest library instance
 
-URL base: https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/
+URL base: https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/
 
-Components documentation: https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/docs/index.html
+Components documentation: https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/docs/index.html
 
 **Examples**
 
 All components
 
 ```text
-https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/index.production.css
-https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/index.development.js
+https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/index.production.css
+https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/index.development.js
 ```
 
 Specific component
 
 ```text
-https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/main-header.production.css
-https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/main-header.development.js
+https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/main-header.production.css
+https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/main-header.development.js
 ```
 
 #### Pull Request library instance
 
-URL base: https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-<branch-name>
+URL base: https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-<branch-name>
 
-Components documentation: https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-<branch-name>/docs/index.html
+Components documentation: https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-<branch-name>/docs/index.html
 
 **Examples**
 
 All components
 
 ```text
-https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-other-feature-branch-name/index.production.css
-https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-feature-1/index.development.js
+https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-other-feature-branch-name/index.production.css
+https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-feature-1/index.development.js
 ```
 
 Specific component
 
 ```text
-https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-bugfix-2-replace-urls-in-config/main-header.production.css
-https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-bugfix-4-fix-rendering/main-header.development.js
+https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-bugfix-2-replace-urls-in-config/main-header.production.css
+https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-bugfix-4-fix-rendering/main-header.development.js
 ```
 
 ### How to contribute
 
-1. Go to file you want to edit (for example https://github.com/cyfronet-fid/eosc-portal-common/blob/develop/configurations/configuration.production.json)
+1. Go to file you want to edit (for example https://github.com/cyfronet-fid/eosc-pl-common/blob/develop/configurations/configuration.production.json)
 2. Click `pen icon`
    ![config](https://user-images.githubusercontent.com/31220811/138041697-ed2af299-65b5-4c2e-9080-5188c92a8b76.png)
 3. Provide changes in edition field
