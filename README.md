@@ -1,7 +1,7 @@
 # EOSC Portal common
 
-[![Stable library documentation](https://github.com/cyfronet-fid/eosc-portal-common/actions/workflows/deploy-stable.yaml/badge.svg?branch=master)](https://s3.cloud.cyfronet.pl/eosc-portal-common/docs/index.html)
-[![Latest library documentation](https://github.com/cyfronet-fid/eosc-portal-common/actions/workflows/deploy-latest.yaml/badge.svg?branch=develop)](https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/docs/index.html)
+[![Stable library documentation](https://github.com/cyfronet-fid/eosc-pl-common/actions/workflows/deploy-stable.yaml/badge.svg?branch=master)](https://s3.cloud.cyfronet.pl/eosc-pl-common/docs/index.html)
+[![Latest library documentation](https://github.com/cyfronet-fid/eosc-pl-common/actions/workflows/deploy-latest.yaml/badge.svg?branch=develop)](https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/docs/index.html)
 
 ### Description
 
@@ -30,7 +30,7 @@ Only for build purposes
 - nodejs >= 14.17.1 LTE
 
 ### Bucket policy update
-Sometimes reading files may not work. To fix the issue run [Update bucket policy workflow](https://github.com/cyfronet-fid/eosc-portal-common/actions/workflows/update-bucket-policy.yaml)
+Sometimes reading files may not work. To fix the issue run [Update bucket policy workflow](https://github.com/cyfronet-fid/eosc-pl-common/actions/workflows/update-bucket-policy.yaml)
 
 ### Dependencies installation
 
@@ -96,13 +96,13 @@ Simple page with custom components
     <div id="eosc-common-eu-information"></div>
     <EoscCommonMainFooter></EoscCommonMainFooter>
 
-    <script src="https://s3.cloud.cyfronet.pl/eosc-portal-common/index.production.min.js"></script>
-    <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-portal-common/index.production.min.css" />
+    <script src="https://s3.cloud.cyfronet.pl/eosc-pl-common/index.production.min.js"></script>
+    <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-pl-common/index.production.min.css" />
   </body>
 </html>
 ```
 
-Attaching only specific component from the [list](https://s3.cloud.cyfronet.pl/eosc-portal-common/docs/index.html)
+Attaching only specific component from the [list](https://s3.cloud.cyfronet.pl/eosc-pl-common/docs/index.html)
 
 ```html
 <!DOCTYPE html>

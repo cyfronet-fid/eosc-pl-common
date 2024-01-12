@@ -9,8 +9,8 @@ const validRequired = (params, ...keys) => {
       log(`${missingParam} param is missing`);
       log(`
         To get more knowledge about params please see documentation under URL:\n
-        - https://github.com/cyfronet-fid/eosc-portal-common#development
-        - https://github.com/cyfronet-fid/eosc-portal-common#building
+        - https://github.com/cyfronet-fid/eosc-pl-common#development
+        - https://github.com/cyfronet-fid/eosc-pl-common#building
       `);
     }
     cb();
@@ -29,8 +29,8 @@ const validProductionArgv = (production) => {
 
     log(`
       To get more knowledge about params please see documentation under URL:\n
-      - https://github.com/cyfronet-fid/eosc-portal-common#development
-      - https://github.com/cyfronet-fid/eosc-portal-common#building
+      - https://github.com/cyfronet-fid/eosc-pl-common#development
+      - https://github.com/cyfronet-fid/eosc-pl-common#building
     `);
     log("Production param is only a flag and shouldn't have any value");
     process.exit(1);
@@ -46,8 +46,8 @@ const validEnvArgv = (envAppRelativePath) => {
       log("A missing env relative path argument.");
       log(`
       To get more knowledge about params please see documentation under URL:\n
-      - https://github.com/cyfronet-fid/eosc-portal-common#development
-      - https://github.com/cyfronet-fid/eosc-portal-common#building
+      - https://github.com/cyfronet-fid/eosc-pl-common#development
+      - https://github.com/cyfronet-fid/eosc-pl-common#building
     `);
       process.exit(1);
     }
@@ -71,8 +71,8 @@ const validDistPathArgv = (distAppRelativePath) => {
       log("A missing dist relative path argument.");
       log(`
       To get more knowledge about params please see documentation under URL:\n
-      - https://github.com/cyfronet-fid/eosc-portal-common#development
-      - https://github.com/cyfronet-fid/eosc-portal-common#building
+      - https://github.com/cyfronet-fid/eosc-pl-common#development
+      - https://github.com/cyfronet-fid/eosc-pl-common#building
     `);
       process.exit(1);
     }
