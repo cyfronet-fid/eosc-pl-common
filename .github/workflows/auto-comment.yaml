@@ -28,20 +28,20 @@ jobs:
 
             ## See your changes with
 
-            ### [Documentation for development build](https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-${{ steps.branch-name.outputs.current_branch }}/docs/index.html)
+            ### [Documentation for development build](https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-${{ steps.branch-name.outputs.current_branch }}/docs/index.html)
             
             ### Development build 
 
               ```html
-              <script src="https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.development.min.js"></script>
-              <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.development.min.css" />
+              <script src="https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.development.min.js"></script>
+              <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.development.min.css" />
               ```
 
             ### Production build 
 
               ```html
-              <script src="https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.production.min.js"></script>
-              <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.production.min.css" />
+              <script src="https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.production.min.js"></script>
+              <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.production.min.css" />
               ```
             
             ### Run commons locally with production build
@@ -66,8 +66,8 @@ jobs:
                 ></eosc-common-main-header>
                 <div id="eosc-common-eu-information"></div>
                 <EoscCommonMainFooter></EoscCommonMainFooter>
-                <script src="https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.production.min.js"></script>
-                <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-portal-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.production.min.css" />
+                <script src="https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.production.min.js"></script>
+                <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.production.min.css" />
               </body>
             </html>
             

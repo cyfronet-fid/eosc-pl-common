@@ -6,15 +6,15 @@ Common EOSC footer at bottom of the application.
 
 #### stable
 
-https://s3.cloud.cyfronet.pl/eosc-portal-common/main-footer.production.css
+https://s3.cloud.cyfronet.pl/eosc-pl-common/main-footer.production.css
 
-https://s3.cloud.cyfronet.pl/eosc-portal-common/main-footer.production.js
+https://s3.cloud.cyfronet.pl/eosc-pl-common/main-footer.production.js
 
 #### latest
 
-https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/main-footer.production.css
+https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/main-footer.production.css
 
-https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/main-footer.production.js
+https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/main-footer.production.js
 
 ### Rendering examples
 
