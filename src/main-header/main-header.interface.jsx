@@ -50,32 +50,41 @@ class EoscCommonMainHeader extends Component {
     }
 
     return (
-      <RWD showOn={["lg", "xl"]}>
-        <nav className={`eosc-common top ${environment.production ? "" : "demo"}`}>
-          <div className="container">
-            <div className="left-links">
-              <a href="https://eosc-portal.eu" className="header-logo">
-                &nbsp;
-              </a>
+      <RWD showOn={["lg", "xl", "md", "sm", "xsm"]}>
+        <div class="commons-header">
+          <nav className={`eosc-common top ${environment.production ? "" : "demo"}`}>
+            <div className="container">
+              <div className="left-links">
+                <a href="https://eosc.pl/" className="header-logo">
+                  &nbsp;
+                </a>
+                <div class="beyond-logo"></div>
+              </div>
+
+              <input className="menu-btn" type="checkbox" id="menu-btn" />
+              <label className="menu-icon" htmlFor="menu-btn">
+                <span className="navicon" />
+              </label>
+
+              <ul className="menu center-links">
+                {environment.mainHeaderConfig.map((config) => (
+                  <EoscMainHeaderBtn
+                    {...{
+                      ...config,
+                      isActive: isBtnActive(
+                        environment.mainHeaderConfig.map((btn) => btn.url),
+                        config.url
+                      ),
+                    }}
+                  />
+                ))}
+              </ul>
+              <ul className="right-links">
+                {getAuthBtn(parsedProps)}
+              </ul>
             </div>
-            <ul className="center-links">
-              {environment.mainHeaderConfig.map((config) => (
-                <EoscMainHeaderBtn
-                  {...{
-                    ...config,
-                    isActive: isBtnActive(
-                      environment.mainHeaderConfig.map((btn) => btn.url),
-                      config.url
-                    ),
-                  }}
-                />
-              ))}
-            </ul>
-            <ul className="right-links">
-              {getAuthBtn(parsedProps)}
-            </ul>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </RWD>
     );
   }
