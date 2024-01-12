@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { Component } from "preact";
 import { environment } from "../../env/env";
-// import EoscMainFooterLogoBar from "./main-footer-logo-bar.component";
 import EoscMainFooterCols from "./main-footer-cols.component";
 import { fieldsToCamelCase, usePropTypes } from "../../core/utils";
 import { renderComponent } from "../../core/render";
@@ -40,11 +39,9 @@ class EoscCommonMainFooter extends Component {
           </div>
         </footer>
         <div className="eosc-common copyright container">
-          <span className="copy-text">Copyright 2025 &nbsp;&nbsp; | &nbsp;&nbsp; All rights reserved</span>
-          &nbsp;&nbsp; | &nbsp;&nbsp;
-          <a href="https://eosc.pl/privacy-policy">Privacy policy</a>
-          &nbsp;&nbsp; | &nbsp;&nbsp;
-          <a href="https://eosc.pl/terms-of-use">Terms of use</a>
+          <span className="copy-text">Copyright 2025 &nbsp;&nbsp; | &nbsp;&nbsp; All rights reserved</span> &nbsp;&nbsp;
+          | &nbsp;&nbsp;
+          <a href="https://eosc-portal.eu/privacy-policy-summary">Privacy policy</a>
         </div>
       </div>
     );
