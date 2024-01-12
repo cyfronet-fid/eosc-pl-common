@@ -1,5 +1,5 @@
 {
-  "name": "eosc-portal-commons-components",
+  "name": "eosc-pl-commons-components",
   "version": "1.0.0",
   "description": "Library containing the custom UI components of the EOSC services. Uses the JS scripts, and the SCSS styles for consistent visualization and events triggering.",
   "scripts": {
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cyfronet-fid/eosc-portal-commons-components.git"
+    "url": "git+https://github.com/cyfronet-fid/eosc-pl-commons-components.git"
   },
   "sideEffects": false,
   "keywords": [
@@ -37,14 +37,14 @@
   "author": "danielkryska",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cyfronet-fid/eosc-portal-commons-components/issues"
+    "url": "https://github.com/cyfronet-fid/eosc-pl-commons-components/issues"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npx lint-staged && npm test"
     }
   },
-  "homepage": "https://github.com/cyfronet-fid/eosc-portal-commons-components#readme",
+  "homepage": "https://github.com/cyfronet-fid/eosc-pl-commons-components#readme",
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/plugin-proposal-decorators": "^7.15.4",

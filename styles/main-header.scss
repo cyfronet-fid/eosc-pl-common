@@ -18,30 +18,48 @@
     }
 
     .center-links {
-      text-align: center;
       flex-grow: 2;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: $color-primary;
+
     }
 
     .left-links {
       text-align: left;
+      display: flex;
+      align-items: center;
 
       .header-logo {
-        width: 84px;
-        height: 32px;
-        background: url("assets/eosc-logo.svg") center no-repeat;
+        width: 135px;
+        height: 47px;
+        background: url("assets/eosc-pl-logo.svg") center no-repeat;
+        display: block;
+        background-size: 135px auto;
+      }
+
+      .beyond-logo {
+        margin-left: 16px;
+        width: 185px;
+        height: 26px;
+        background: url("assets/logo-beyond-dark.png") center no-repeat;
+        background-size: contain;
         display: block;
       }
     }
 
     .right-links {
       text-align: right;
-      color: $color-primary;
       flex-basis: auto;
       align-items: center;
       display: flex;
+
+      #login-btn {
+        a {
+          color: black;
+        }
+      }
 
       .browse-link {
         margin-right: 0;
@@ -79,12 +97,12 @@
       }
 
       li {
-        font-size: 14px;
+        font-size: 16px;
         margin-right: 0;
 
         a {
           color: $color-primary;
-          font-size: 14px;
+          font-size: 16px;
         }
       }
 
@@ -199,7 +217,7 @@ ul.login-dropdown {
         a {
           font-size: 13px;
         }
-
+        left-links
         .dropdown {
           .account-dropdown {
             width: 25px;
@@ -328,6 +346,20 @@ ul.login-dropdown {
     padding-right: 10px;
     padding-left: 10px;
     display: block;
+  }
+
+  .eosc-common.top .left-links {
+    align-items: flex-start;
+    flex-direction: column;
+    align-content: flex-start;
+    margin-top: -13px;
+  }
+
+  .eosc-common.top .left-links .beyond-logo {
+    margin-left: 0;
+    width: 120px;
+    height: 20px;
+    margin-top: 12px;
   }
 
   .eosc-common.top .left-links .header-logo {

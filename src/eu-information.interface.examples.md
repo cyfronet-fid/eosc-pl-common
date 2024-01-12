@@ -6,15 +6,15 @@ The information's about agreement made with UE.
 
 #### stable
 
-https://s3.cloud.cyfronet.pl/eosc-portal-common/eu-information.production.css
+https://s3.cloud.cyfronet.pl/eosc-pl-common/eu-information.production.css
 
-https://s3.cloud.cyfronet.pl/eosc-portal-common/eu-information.production.js
+https://s3.cloud.cyfronet.pl/eosc-pl-common/eu-information.production.js
 
 #### latest
 
-https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/eu-information.production.css
+https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/eu-information.production.css
 
-https://s3.cloud.cyfronet.pl/eosc-portal-common/latest/eu-information.production.js
+https://s3.cloud.cyfronet.pl/eosc-pl-common/latest/eu-information.production.js
 
 ### Rendering examples
 
