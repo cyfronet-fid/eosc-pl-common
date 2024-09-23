@@ -18,11 +18,12 @@
     }
 
     .center-links {
-      text-align: center;
       flex-grow: 2;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-end;
+      color: $color-primary;
+
     }
 
     .left-links {
@@ -31,9 +32,19 @@
       align-items: center;
 
       .header-logo {
-        width: 84px;
-        height: 32px;
-        background: url("assets/eosc-logo.svg") center no-repeat;
+        width: 245px;
+        height: 44px;
+        background: url("assets/eosc-pl-logo.svg") center no-repeat;
+        display: block;
+        background-size: 245px auto;
+      }
+
+      .beyond-logo {
+        margin-left: 16px;
+        width: 185px;
+        height: 26px;
+        background: url("assets/logo-beyond-dark.png") center no-repeat;
+        background-size: contain;
         display: block;
       }
 
@@ -49,10 +60,15 @@
 
     .right-links {
       text-align: right;
-      color: $color-primary;
       flex-basis: auto;
       align-items: center;
       display: flex;
+
+      #login-btn {
+        a {
+          color: black;
+        }
+      }
 
       .browse-link {
         margin-right: 0;
@@ -90,12 +106,12 @@
       }
 
       li {
-        font-size: 14px;
+        font-size: 16px;
         margin-right: 0;
 
         a {
           color: $color-primary;
-          font-size: 14px;
+          font-size: 16px;
         }
       }
 

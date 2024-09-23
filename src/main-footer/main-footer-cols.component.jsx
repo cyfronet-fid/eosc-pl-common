@@ -43,24 +43,27 @@ export default class EoscMainFooterCols extends Component {
         const propsValidated = usePropTypes(props, EoscMainFooterCols);
         const cols = propsValidated.cols;
         return (
-            <div className="row mt-5 pb-2">
-                {cols.map((col) => (
-                    <div className="col-md">
-                        {col.map((list) => (
-                            <ul>
-                                <li>
-                                    <div className="title">{list.url ? <a href={list.url}>{list.label}</a> : list.label}</div>
-                                </li>
-                                {!!list.navBtns && list.navBtns.length > 0 ? (
-                                    list.navBtns.map((btn) => this.renderLink(btn, propsValidated))
-                                ) : (
-                                    <Fragment />
-                                )}
-                            </ul>
+          <div className="row mt-5 pb-2">
+              <div className="col-md">
+                  <a href="https://eosc.pl/" className="logo-two"></a>
+              </div>
+              {cols.map((col) => (
+              <div className="col-md">
+                  {col.map((list) => (
+                    <ul>
+                        <li>
+                            <div className="title">{list.url ? <a href={list.url}>{list.label}</a> : list.label}</div>
+                        </li>
+                        {!!list.navBtns && list.navBtns.length > 0 ? (
+                            list.navBtns.map((btn) => this.renderLink(btn, propsValidated))
+                        ) : (
+                            <Fragment />
+                        )}
+                    </ul>
                         ))}
-                    </div>
+              </div>
                 ))}
-            </div>
+          </div>
         );
     }
 }
