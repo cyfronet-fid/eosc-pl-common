@@ -1,9 +1,13 @@
 import PropTypes from "prop-types";
 import { Component } from "preact";
 import { environment } from "../../env/env";
+import EoscMainFooterLogoBar from "./main-footer-logo-bar.component";
 import EoscMainFooterCols from "./main-footer-cols.component";
-import { renderComponent } from "../../core/render";
+import EoscMainFooterLegalBar from "./main-footer-legal.component";
+import EoscMainFooterBtn from "./main-footer-btn.component";
 import { fieldsToCamelCase, usePropTypes } from "../../core/utils";
+import { renderComponent } from "../../core/render";
+import { isBtnActive } from "../main-header/main-header.utils";
 
 /**
  * @version 1.1
@@ -33,7 +37,7 @@ class EoscCommonMainFooter extends Component {
     const { production, termsOfUse, privacyPolicy } = fieldsToCamelCase(usePropTypes(props, EoscCommonMainFooter));
     return (
       <div>
-        <footer className={`eosc-common footer pt-3 pb-3 ${production ? "" : "demo"}`}>
+        <footer className={`eosc-common footer-common pt-3 pb-3 ${production ? "" : "demo"}`}>
           <div className="container">
             <EoscMainFooterCols termsOfUse={termsOfUse} privacyPolicy={privacyPolicy} />
           </div>
