@@ -50,7 +50,7 @@ yarn install
 
 ### Building
 
-Building process produce `*.min.js`, `*.min.css` files into `dist` folder by default.
+Building process produce `*.min.js`, `*.min.css` files into `dist` folder by default
 
 **Params**
 
