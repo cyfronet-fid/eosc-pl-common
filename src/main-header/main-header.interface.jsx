@@ -55,7 +55,11 @@ class EoscCommonMainHeader extends Component {
           <nav className={`eosc-common top ${environment.production ? "" : "demo"}`}>
             <div className="container">
               <div className="left-links">
+<<<<<<< HEAD
                 <a href="https://eosc.pl/" className="header-logo">
+=======
+                <a href="https://www.eosc-beyond.eu/" className="beyond-logo">
+>>>>>>> 2a89896 (remove old logo from header)
                   &nbsp;
                 </a>
               </div>
