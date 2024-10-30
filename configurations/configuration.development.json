@@ -6,6 +6,10 @@
     "lg": 992,
     "xl": 1200
   },
+<<<<<<< HEAD
   "autoLoginDomains": [".eosc.pl", "eosc.pl", "localhost", ".docker-fid.grid.cyf-kr.edu.pl"]
+=======
+  "autoLoginDomains": ["localhost", ".docker-fid.grid.cyf-kr.edu.pl", "sandbox.eosc-beyond.eu", ".sandbox.eosc-beyond.eu"]
+>>>>>>> ae6bda1 ( update beta env for sandbox instances, remove eu-information component)
 }
 

@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "label": "About EOSC PL",
     "url": "https://eosc.gov.pl/"
   },
@@ -10,5 +11,29 @@
   {
     "label": "Contact",
     "url": "https://eosc.gov.pl/kontakt/"
+=======
+    "label": "About EOSC",
+    "url": "https://www.eosc-beyond.eu/eosc"
+  },
+  {
+    "label": "Browse Marketplace",
+    "url": "https://marketplace.sandbox.eosc-beyond.eu"
+  },
+  {
+    "label": "Providers Hub",
+    "url": "https://integration.providers.sandbox.eosc-beyond.eu/home"
+  },
+  {
+    "label": "Monitoring",
+    "url": "https://monitoring.eosc-portal.eu"
+  },
+  {
+    "label": "Status",
+    "url": "https://eosccore.status.argo.grnet.gr"
+  },
+  {
+    "label": "Contact us",
+    "url": "mailto:eosc-beyond-po@mailman.egi.eu"
+>>>>>>> ae6bda1 ( update beta env for sandbox instances, remove eu-information component)
   }
 ]
