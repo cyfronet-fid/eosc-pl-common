@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Component } from "preact";
 import { environment } from "../../env/env";
-import EoscMainFooterLogoBar from "./main-footer-logo-bar.component";
+// import EoscMainFooterLogoBar from "./main-footer-logo-bar.component";
 import EoscMainFooterCols from "./main-footer-cols.component";
 import { fieldsToCamelCase, usePropTypes } from "../../core/utils";
 import { renderComponent } from "../../core/render";
