@@ -1,25 +1,23 @@
 {
   "cols": [
-    [
-      {
-        "label": "Contact",
-        "url": "#",
-        "navBtns": [
-          {
-            "label": "Researchers - support@marketplace.eu",
-            "url": "mailto:support@marketplace.eu"
-          },
-          {
-            "label": "Providers - onboarding@eosc.pl",
-            "url": "mailto:onboarding@eosc.pl"
-          },
-          {
-            "label": "Businesses - business@eosc-dih.eu",
-            "url": "mailto:business@eosc-dih.eu"
-          }
-        ]
-      }
-    ]
+    {
+      "label": "Contact",
+      "url": "#",
+      "navBtns": [
+        {
+          "label": "Researchers - support@marketplace.eu",
+          "url": "mailto:support@marketplace.eu"
+        },
+        {
+          "label": "Providers - onboarding@eosc.pl",
+          "url": "mailto:onboarding@eosc.pl"
+        },
+        {
+          "label": "Businesses - business@eosc-dih.eu",
+          "url": "mailto:business@eosc-dih.eu"
+        }
+      ]
+    }
   ],
   "socials": [
     {
