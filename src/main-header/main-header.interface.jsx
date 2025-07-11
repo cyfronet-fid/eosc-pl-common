@@ -18,24 +18,24 @@ class EoscCommonMainHeader extends Component {
      * Username property
      */
     username: PropTypes.string,
-    "login-url": PropTypes.string,
-    "logout-url": PropTypes.string,
-    "on-login": isJsScript,
-    "on-logout": isJsScript,
+    "loginUrl": PropTypes.string,
+    "logoutUrl": PropTypes.string,
+    "onLogin": isJsScript,
+    "onLogout": isJsScript,
     autoLogin: PropTypes.bool,
-    "show-eosc-links": PropTypes.bool,
-    "profile-links": PropTypes.string
+    "showEoscLinks": PropTypes.bool,
+    "profileLinks": PropTypes.string
   };
 
   static defaultProps = {
     username: "",
-    "login-url": "",
-    "logout-url": "",
-    "on-login": "",
-    "on-logout": "",
+    "loginUrl": "",
+    "logoutUrl": "",
+    "onLogin": "",
+    "onLogout": "",
     autoLogin: true,
-    "show-eosc-links": false,
-    "profile-links": '[]'
+    "showEoscLinks": false,
+    "profileLinks": "[]"
   };
 
   render(props) {
