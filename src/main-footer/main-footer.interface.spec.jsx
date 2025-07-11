@@ -1,11 +1,13 @@
-import { mount } from "enzyme";
 import EoscCommonMainFooter from "./main-footer.interface";
 import EoscMainFooterCols from "./main-footer-cols.component";
+import { render } from "@testing-library/preact";
 
 describe("Main Footer Component", () => {
-  test.skip("Should display nth columns", () => {
-    const wrapper = mount(<EoscCommonMainFooter />);
+  test("Should display nth columns", () => {
+    const { container } = render(<EoscCommonMainFooter />);
 
-    expect(wrapper.find("EoscMainFooterCols .col-md")).toHaveLength(EoscMainFooterCols.defaultProps.cols.length + 1);
+    const columns = container.querySelectorAll(".column");
+
+    expect(columns).toHaveLength(EoscMainFooterCols.defaultProps.cols.length);
   });
 });

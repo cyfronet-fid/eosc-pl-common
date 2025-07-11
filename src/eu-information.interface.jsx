@@ -12,13 +12,13 @@ class EoscCommonEuInformation extends Component {
     description: PropTypes.string,
     "btn-conf": PropTypes.shape({
       label: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
-    }),
+      url: PropTypes.string.isRequired
+    })
   };
 
   static defaultProps = {
     description: environment.euInformationConfig.description,
-    "btn-conf": environment.euInformationConfig.btn,
+    "btn-conf": environment.euInformationConfig.btn
   };
 
   render(props) {

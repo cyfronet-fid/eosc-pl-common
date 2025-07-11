@@ -1,16 +1,16 @@
-@import "shared";
+@use "shared";
 
 .eosc-common {
   &.copyright {
     font-size: 12px;
     font-weight: 300;
-    background: $color-white;
+    background: shared.$color-white;
     color: #828282;
     text-align: center;
     padding: 20px 0 15px;
 
     a {
-      font-size: calc(0.75 * #{$font-size-base});
+      font-size: calc(0.75 * #{shared.$font-size-base});
       color: #828282;
 
       &:hover {
@@ -21,10 +21,10 @@
 
   &.footer {
     width: 100%;
-    background: url("assets/eosc-pl-footer-bg.png") 100% 50% no-repeat, $color-primary;
+    background: url("assets/eosc-pl-footer-bg.png") 100% 50% no-repeat, shared.$color-primary;
     background-size: contain;
     font-weight: 300;
-    padding: $font-size-base 0 0;
+    padding: shared.$font-size-base 0 0;
 
     .logo-one {
       background: url("assets/eosc-logo-mono.png") top center no-repeat;
@@ -42,22 +42,22 @@
     }
 
     ul {
-      line-height: calc(1.1 * #{$font-size-base});
+      line-height: calc(1.1 * #{shared.$font-size-base});
       padding: 0;
       list-style: none;
       margin: 0 0 35px;
 
       li {
         margin-bottom: 14px;
-        font-size: calc(0.68 * #{$font-size-base});
+        font-size: calc(0.68 * #{shared.$font-size-base});
         font-weight: 700;
-        color: $color-7;
+        color: shared.$color-7;
 
         a {
           font-size: 16px;
           font-weight: 300;
           line-height: 1.1;
-          color: $color-7;
+          color: shared.$color-7;
 
           &:hover {
             text-decoration: underline;
@@ -67,7 +67,7 @@
     }
 
     .title {
-      color: $color-white;
+      color: shared.$color-white;
       font-weight: 700;
       line-height: 1.2;
       font-size: 18px;
@@ -77,23 +77,23 @@
       a {
         font-size: 18px;
         text-decoration: none;
-        color: $color-white;
+        color: shared.$color-white;
         font-weight: 700;
       }
     }
 
     a {
-      color: $color-white;
+      color: shared.$color-white;
       font-size: 16px;
 
       &:hover {
-        color: $color-white;
+        color: shared.$color-white;
         text-decoration: underline;
       }
     }
 
     hr {
-      border-color: $color-6;
+      border-color: shared.$color-6;
     }
 
     .social-logo {
@@ -109,7 +109,7 @@
     }
 
     .social-logo:hover {
-      color: $color-white;
+      color: shared.$color-white;
       opacity: 0.7;
     }
 
