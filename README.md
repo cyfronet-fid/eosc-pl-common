@@ -88,8 +88,8 @@ Simple page with custom components
   <body>
     <eosc-common-main-header
       username="name surname"
-      login-url="https://marketplace.eosc-portal.eu/users/auth/checkin"
-      logout-url="https://marketplace.eosc-portal.eu/users/logout"
+      login-url="https://marketplace.eosc.pl/users/auth/checkin"
+      logout-url="https://marketplace.eosc.pl/users/logout"
     ></eosc-common-main-header>
     <div id="eosc-common-eu-information"></div>
     <EoscCommonMainFooter></EoscCommonMainFooter>
@@ -134,8 +134,8 @@ Using render toolset to dynamically re-render components
   <body>
     <eosc-common-main-header
       username="name surname"
-      login-url="https://marketplace.eosc-portal.eu/users/auth/checkin"
-      logout-url="https://marketplace.eosc-portal.eu/users/logout"
+      login-url="https://marketplace.eosc.pl/users/auth/checkin"
+      logout-url="https://marketplace.eosc.pl/users/logout"
     ></eosc-common-main-header>
     <script>
       window.eosccommon.renderMainHeader("eosc-common-main-header");
