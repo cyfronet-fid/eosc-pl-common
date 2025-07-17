@@ -214,3 +214,15 @@ Use default eosc links with custom links defined via `profile-links`
   profile-links='[{"href": "https://search.marketplace.eosc-portal.eu", "caption": "EOSC Search Service"}]'
 ></EoscCommonMainHeader>
 ```
+
+Use default eosc links with custom tab definded via `custom-tabs`
+
+```js
+<EoscCommonMainHeader
+  username="John Doe"
+  on-logout="alert('logout btn');"
+  login-url="https://marketplace.eosc-portal.eu/users/auth/checkin"
+  show-eosc-links="true"
+  custom-tabs='[{"id": "provider", "name": "Provider", "links": [{"caption": "Some Link", "href": "/backoffice"}, {"caption": "Help", "href": "/help"}]}]'
+></EoscCommonMainHeader>
+```

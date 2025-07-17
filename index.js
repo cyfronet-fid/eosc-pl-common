@@ -8,6 +8,4 @@ import { default as main_footer } from "/home/eland/Desktop/eosc-portal-common/s
 >>>>>>> ae6bda1 ( update beta env for sandbox instances, remove eu-information component)
 
 main_header;
-
-main_header;
 main_footer;
