@@ -18,7 +18,8 @@
     }
 
     .center-links {
-      flex-grow: 2;
+      text-align: center;
+      flex-grow: 0.8;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -52,8 +53,13 @@
     .right-links {
       text-align: right;
       flex-basis: auto;
+      flex-shrink: 0;
       align-items: center;
       display: flex;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      gap: 5px;
+      min-width: 0;
 
       #login-btn {
         a {
@@ -64,6 +70,7 @@
       .browse-link {
         margin-right: 0;
         margin-left: 0;
+        flex-shrink: 0;
 
         a {
           border: 1px solid shared.$color-primary;
@@ -72,13 +79,18 @@
           font-size: 14px;
           font-weight: 400;
           position: relative;
-          padding: 7px 20px 7px 38px;
+          padding: 7px 15px 7px 30px;
           transition: all 0.25s ease;
+          white-space: nowrap;
+
+          svg {
+            margin-right: 1em;
+          }
 
           &:before {
             content:'';
             position: absolute;
-            left: 12px;
+            left: 8px;
             top: 6px;
             width: 16px;
             height: 16px;
@@ -99,6 +111,15 @@
       li {
         font-size: 16px;
         margin-right: 0;
+        margin-left: 0;
+        flex-shrink: 0;
+
+        svg {
+          width: 15px;
+          display: inline-block;
+          margin-bottom: 4px;
+          margin-right: 8px;
+        }
 
         a {
           color: shared.$color-primary;
@@ -108,7 +129,8 @@
 
       .dropdown {
         display: inline;
-        margin-left: 10px;
+        margin-right: 10px;
+        flex-shrink: 0;
 
         .account-dropdown {
           display:inline-block;
@@ -118,17 +140,19 @@
           height: 32px;
           line-height: 32px;
           text-align: center;
-          background: #EDF4FF;
+          background: none;
           color: shared.$color-primary;
 
           > svg {
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
           }
         }
 
         .dropdown-menu {
           left: auto !important;
+          background: shared.$color-white;
+          min-width: 200px;
         }
       }
     }

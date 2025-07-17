@@ -4,7 +4,5 @@ import { default as main_footer } from "/home/eland/Desktop/eosc-pl-common/src/m
 import { default as eu_information } from "/home/eland/Desktop/eosc-pl-common/src/eu-information.interface.jsx";
 
 main_header;
-
-main_header;
 main_footer;
 eu_information;

@@ -2,7 +2,7 @@ export default function EoscMainFooterLogoBar() {
   return (
     <div className="row h-100 logo-row">
       <div className="col-md">
-        <a className="logo-one d-block" href="https://eosc-portal.eu">
+        <a className="logo-one d-block" href="https://eosc.pl">
                     &nbsp;
         </a>
       </div>
