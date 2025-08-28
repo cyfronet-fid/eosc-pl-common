@@ -6,16 +6,16 @@ import { usePropTypes } from "../../core/utils";
 export default class EoscMainFooterCols extends Component {
   static propTypes = {
     cols: PropTypes.arrayOf(
-        PropTypes.shape({
-          label: PropTypes.string.isRequired,
-          url: PropTypes.string,
-          navBtns: PropTypes.arrayOf(
-            PropTypes.shape({
-              label: PropTypes.string.isRequired,
-              url: PropTypes.string.isRequired
-            })
-          ).isRequired
-        })
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        url: PropTypes.string,
+        navBtns: PropTypes.arrayOf(
+          PropTypes.shape({
+            label: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired
+          })
+        ).isRequired
+      })
     ),
     termsOfUse: PropTypes.string,
     privacyPolicy: PropTypes.string
@@ -42,18 +42,18 @@ export default class EoscMainFooterCols extends Component {
     const cols = propsValidated.cols;
     return (
       <div className="d-flex pb-2 footer-column-wrapper">
-          {cols.map((col) => (
-              <div className="footer-column">
-                <h4>{col.label}</h4>
-                <ul>
-                    {!!col.navBtns && col.navBtns.length > 0 ? (
-                        col.navBtns.map((btn) => this.renderLink(btn, propsValidated))
-                    ) : (
-                        <Fragment />
-                    )}
-                </ul>
-              </div>
-          ))}
+        {cols.map((col) => (
+          <div className="footer-column">
+            <h4>{col.label}</h4>
+            <ul>
+              {!!col.navBtns && col.navBtns.length > 0 ? (
+                col.navBtns.map((btn) => this.renderLink(btn, propsValidated))
+              ) : (
+                <Fragment />
+              )}
+            </ul>
+          </div>
+        ))}
       </div>
     );
   }

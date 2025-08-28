@@ -45,8 +45,8 @@ class EoscCommonMainHeader extends Component {
      * IMPORTANT!!! By default is on
      */
     const parsedProps = fieldsToCamelCase(usePropTypes(props, EoscCommonMainHeader));
-    parsedProps.profileLinks = JSON.parse(parsedProps.profileLinks)
-    parsedProps.customTabs = JSON.parse(parsedProps.customTabs)
+    parsedProps.profileLinks = JSON.parse(parsedProps.profileLinks);
+    parsedProps.customTabs = JSON.parse(parsedProps.customTabs);
     const { autoLogin } = parsedProps;
     if (isAutologinOn(autoLogin)) {
       tryAutologin(parsedProps);

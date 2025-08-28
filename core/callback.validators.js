@@ -14,6 +14,7 @@ export function allValidScripts(...JSscripts) {
     try {
       return !isDynamicallyValid(callback);
     } catch (e) {
+      console.warn(`Calling ${callback} has been crashed: ${e}`);
       return true;
     }
   });

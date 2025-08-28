@@ -118,7 +118,7 @@
       }
 
       li {
-        font-size: 16px;
+        font-size: 15px;
         margin-right: 0;
         margin-left: 0;
         flex-shrink: 0;
@@ -132,7 +132,12 @@
 
         a {
           color: shared.$color-primary;
-          font-size: 16px;
+          font-size: 15px;
+
+          &#logout-btn {
+            border-top: 1px solid #eee;
+            padding-top: 6px;
+          }
         }
       }
 
@@ -161,9 +166,17 @@
         .dropdown-menu {
           left: auto !important;
           background: shared.$color-white;
-          min-width: 200px;
+          min-width: 210px;
           padding: 0 0 4px;
           border: 1px solid #eee;
+
+          .dropdown-tabs-container {
+            .dropdown-tabs {
+              .nav-link {
+                padding: 0.5rem 0.75rem;
+              }
+            }
+          }
         }
       }
     }
