@@ -33,11 +33,11 @@
       align-items: center;
 
       .header-logo {
-        width: 135px;
-        height: 47px;
-        background: url("assets/eosc-pl-logo.svg") center no-repeat;
+        width: 285px;
+        height: 37px;
+        background: url("assets/eosc-pl-logo.png") center no-repeat;
         display: block;
-        background-size: 135px auto;
+        background-size:285px auto;
       }
 
       .beyond-logo {
@@ -398,9 +398,9 @@ ul.login-dropdown {
   }
 
   .eosc-common.top .left-links .header-logo {
-    width: 110px;
-    height: 42px;
-    background-size: 110px auto;
+    width: 150px;
+    height: 30px;
+    background-size: 150px auto;
   }
 
   .eosc-common.top .right-links {
