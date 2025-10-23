@@ -58,9 +58,7 @@ class EoscCommonMainHeader extends Component {
           <nav className={`eosc-common top ${environment.production ? "" : "demo"}`}>
             <div className="container">
               <div className="left-links">
-                <a href="https://eosc.pl/" className="header-logo">
-                  &nbsp;
-                </a>
+                <a href="https://eosc.pl/" className="header-logo"></a>
               </div>
 
               <input className="menu-btn" type="checkbox" id="menu-btn" />
