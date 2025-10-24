@@ -44,6 +44,8 @@ class EoscCommonMainFooter extends Component {
           <a href="https://eosc.pl/privacy-policy">Privacy policy</a>
           &nbsp;&nbsp; | &nbsp;&nbsp;
           <a href="https://eosc.pl/terms-of-use">Terms of use</a>
+          &nbsp;&nbsp; | &nbsp;&nbsp;
+          <a href="/styles/assets/eosc_node_poland.zip">Download logo</a>
         </div>
       </div>
     );
