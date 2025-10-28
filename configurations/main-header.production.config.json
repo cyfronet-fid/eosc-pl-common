@@ -10,5 +10,9 @@
   {
     "label": "Contact",
     "url": "https://eosc.gov.pl/kontakt/"
+  },
+  {
+    "label": "Onedata",
+    "url": "https://data.eosc.pl/"
   }
 ]
