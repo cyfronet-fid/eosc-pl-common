@@ -23,7 +23,6 @@ exports.buildLib = (argv = []) => {
     return series(
         parallel(validProductionArgv(production), validEnvArgv(env)),
         parallel(
-            // UŻYJ SYSTEMOWEGO cp DO KOPIOWANIA BEZ PRZETWARZANIA
             async function moveAssets() {
                 try {
                     await execa("mkdir", ["-p", "dist"], { cwd: rootPath });
@@ -55,7 +54,6 @@ exports.buildLib = (argv = []) => {
     );
 };
 
-// Reszta bez zmian...
 const preprocessStyles = (production, env, browserSync = null) => {
     return parallel(
         series(
