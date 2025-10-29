@@ -5,7 +5,6 @@ describe("Eu Information Component", () => {
   test("Should display the default description and the default URL", () => {
     const { container } = render(<EoscEuInformation />);
 
-    // Sprawdź czy defaultProps faktycznie istnieją i nie są puste
     const defaultDescription = EoscEuInformation.defaultProps?.description;
     const defaultBtnLabel = EoscEuInformation.defaultProps?.["btn-conf"]?.label;
 
@@ -17,7 +16,6 @@ describe("Eu Information Component", () => {
       expect(container).toHaveTextContent(defaultBtnLabel);
     }
 
-    // Alternatywnie, sprawdź czy komponent w ogóle renderuje jakąś treść
     expect(container.textContent.trim()).not.toBe("");
   });
 
