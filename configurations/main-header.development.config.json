@@ -8,10 +8,6 @@
     "url": "https://eosc.pl/search/all_collection?q=*"
   },
   {
-    "label": "Contact",
-    "url": "https://eosc.gov.pl/kontakt/"
-  },
-  {
     "label": "Onedata",
     "url": "https://data.eosc.pl/"
   }

@@ -3,28 +3,29 @@
 .eosc-common {
   &.copyright {
     font-size: 12px;
-    font-weight: 300;
-    background: shared.$color-white;
-    color: #828282;
+    font-weight: 400;
+    color: #24727B;
     text-align: center;
-    padding: 20px 0 15px;
+    padding: 55px 0 15px;
 
     a {
       font-size: calc(0.75 * #{shared.$font-size-base});
-      color: #828282;
+      color: #24727B;
+      text-decoration: underline;
 
       &:hover {
         text-decoration: none;
+        color: #363939;
       }
     }
   }
 
   &.footer {
     width: 100%;
-    background: url("assets/eosc-pl-footer-bg.png") 100% 50% no-repeat, shared.$color-primary;
-    background-size: contain;
-    font-weight: 300;
-    padding: shared.$font-size-base 0 0;
+    background: #fff url("assets/eosc-pl-footer-bg.png") 50% 0 no-repeat;
+    background-size: auto 100%;
+    font-weight: 400;
+    padding: 60px 0 0;
 
     .logo-one {
       background: url("assets/eosc-logo-mono.png") top center no-repeat;
@@ -41,26 +42,48 @@
       display: block;
     }
 
+    h4 {
+      color: #24727B;
+      text-align: center;
+      font-family: "Quicksand", sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      margin-bottom: 17px;
+      font-weight: 500;
+      line-height: 140%; /* 33.6px */
+      letter-spacing: 0.48px;
+    }
+
+    .footer-column-wrapper {
+      column-gap: 40px;
+      justify-content: space-around;
+    }
+
     ul {
       line-height: calc(1.1 * #{shared.$font-size-base});
       padding: 0;
       list-style: none;
-      margin: 0 0 35px 30px;
+      margin: 0 auto;
 
       li {
         margin-bottom: 14px;
         font-size: calc(0.68 * #{shared.$font-size-base});
         font-weight: 700;
+        text-align: center;
+        width: 100%;
         color: shared.$color-7;
 
         a {
-          font-size: 16px;
-          font-weight: 300;
+          font-size: 14px;
+          font-weight: 400;
+          font-family: "Roboto", Arial;
           line-height: 1.1;
-          color: shared.$color-7;
+          text-decoration: none;
+          color: #363939;
 
           &:hover {
-            text-decoration: underline;
+            color: #24727B;
+            text-decoration: none;
           }
         }
       }
@@ -79,16 +102,6 @@
         text-decoration: none;
         color: shared.$color-white;
         font-weight: 700;
-      }
-    }
-
-    a {
-      color: shared.$color-white;
-      font-size: 16px;
-
-      &:hover {
-        color: shared.$color-white;
-        text-decoration: underline;
       }
     }
 
@@ -132,9 +145,15 @@
   @media screen and (max-width: 992px) {
 
     .eosc-common.footer {
-      background: #257B85;
+      padding: 30px 0 0;
     }
 
+    .eosc-common.footer .footer-column-wrapper {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+
+    .eosc-common.footer .footer-column-wrapper
     .eosc-common .row {
       justify-content: center;
       row-gap: 30px;
