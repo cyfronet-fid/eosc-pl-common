@@ -1,25 +1,75 @@
 {
   "cols": [
-    [
-      {
-        "label": "Contact",
-        "url": "#",
-        "navBtns": [
-          {
-            "label": "Researchers - support@marketplace.eu",
-            "url": "mailto:support@marketplace.eu"
-          },
-          {
-            "label": "Providers - onboarding@eosc.pl",
-            "url": "mailto:onboarding@eosc.pl"
-          },
-          {
-            "label": "Businesses - business@eosc-dih.eu",
-            "url": "mailto:business@eosc-dih.eu"
-          }
-        ]
-      }
-    ]
+    {
+      "label": "For users",
+      "url": "#",
+      "navBtns": [
+        {
+          "label": "Browse resources",
+          "url": "https://eosc.pl/search/all_collection?q=*&scope=pl"
+        },
+        {
+          "label": "Your projects",
+          "url": "https://marketplace.eosc.pl/projects"
+        }
+      ]
+    },
+    {
+      "label": "For providers",
+      "url": "#",
+      "navBtns": [
+        {
+          "label": "Backoffice",
+          "url": "https://marketplace.eosc.pl/backoffice/services"
+        },
+        {
+          "label": "Become a provider",
+          "url": "https://marketplace.eosc.pl/backoffice/providers"
+        },
+        {
+          "label": "Marketplace API",
+          "url": "https://marketplace.eosc.pl/api_docs"
+        }
+      ]
+    },
+    {
+      "label": "Partners",
+      "url": "#",
+      "navBtns": [
+        {"label": "Narodowe centrum Nauki",
+          "url": "https://ncn.gov.pl/"},
+        {
+          "label": "ACK Cyfronet AGH",
+          "url": "https://www.cyfronet.pl/"
+        },
+        {
+          "label": "Politechnika Gdańska",
+          "url": "https://pg.edu.pl/"
+        },
+        {
+          "label": "Uniwersytet Warszawski",
+          "url": "https://www.uw.edu.pl/"
+        }
+      ]
+    },
+    {
+      "label": "Contact",
+      "url": "#",
+      "navBtns": [
+        {
+          "label": "Researchers - support@marketplace.eu",
+          "url": "mailto:support@marketplace.eu"
+        },
+        {
+          "label": "Providers - onboarding@eosc.pl",
+          "url": "mailto:onboarding@eosc.pl"
+        },
+        {
+          "label": "Businesses - business@eosc-dih.eu",
+          "url": "mailto:business@eosc-dih.eu"
+        }
+      ]
+    }
   ],
   "socials": [
     {

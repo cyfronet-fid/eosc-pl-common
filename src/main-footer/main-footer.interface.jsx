@@ -39,16 +39,17 @@ class EoscCommonMainFooter extends Component {
           <div className="container">
             <EoscMainFooterCols termsOfUse={termsOfUse} privacyPolicy={privacyPolicy} />
           </div>
+
+          <div className="eosc-common copyright container">
+            <span className="copy-text">Copyright 2025 &nbsp;&nbsp; | &nbsp;&nbsp; All rights reserved</span>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <a href={privacyPolicy}>Privacy policy</a>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <a href={termsOfUse}>Terms of use</a>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <a href={logoPack}>Download Logo</a>
+          </div>
         </footer>
-        <div className="eosc-common copyright container">
-          <span className="copy-text">Copyright 2025 &nbsp;&nbsp; | &nbsp;&nbsp; All rights reserved</span>
-          &nbsp;&nbsp; | &nbsp;&nbsp;
-          <a href={privacyPolicy}>Privacy policy</a>
-          &nbsp;&nbsp; | &nbsp;&nbsp;
-          <a href={termsOfUse}>Terms of use</a>
-          &nbsp;&nbsp; | &nbsp;&nbsp;
-          <a href={logoPack}>Download Logo</a>
-        </div>
       </div>
     );
   }
