@@ -64,7 +64,6 @@ jobs:
                   login-url="https://marketplace.eosc.pl/users/auth/checkin"
                   logout-url="https://marketplace.eosc.pl/users/logout"
                 ></eosc-common-main-header>
-                <div id="eosc-common-eu-information"></div>
                 <EoscCommonMainFooter></EoscCommonMainFooter>
                 <script src="https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.production.min.js"></script>
                 <link rel="stylesheet" href="https://s3.cloud.cyfronet.pl/eosc-pl-common/pr-${{ steps.branch-name.outputs.current_branch }}/index.production.min.css" />

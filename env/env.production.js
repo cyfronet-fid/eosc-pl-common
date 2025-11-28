@@ -1,17 +1,15 @@
 const mainHeaderConfig = require("../configurations/main-header.production.config.json");
 const mainFooterConfig = require("../configurations/main-footer.production.config.json");
-const euInformationConfig = require("../configurations/eu-information.production.json");
 const defaultConfiguration = require("../configurations/configuration.production.json");
 
 const environment = {
   mainHeaderConfig,
   mainFooterConfig,
   defaultConfiguration,
-  euInformationConfig,
   marketplaceUrl: "https://marketplace.eosc.pl",
   dashboardUrl: "https://my.eosc.pl",
   production: true,
-  windowTagName: "eosccommon",
+  windowTagName: "eosccommon"
 };
 exports.environment = environment;
 
