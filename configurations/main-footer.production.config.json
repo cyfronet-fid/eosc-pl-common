@@ -11,6 +11,10 @@
         {
           "label": "Your projects",
           "url": "https://marketplace.eosc.pl/projects"
+        },
+        {
+          "label": "User documentations",
+          "url": "https://marketplace.eosc.pl/user_documentation"
         }
       ]
     },
