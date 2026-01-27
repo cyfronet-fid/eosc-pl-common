@@ -57,16 +57,16 @@
       "url": "#",
       "navBtns": [
         {
-          "label": "Researchers - support@marketplace.eu",
-          "url": "mailto:support@marketplace.eu"
+          "label": "contact@eosc.pl",
+          "url": "mailto:contact@eosc.pl"
         },
         {
-          "label": "Providers - onboarding@eosc.pl",
+          "label": "onboarding@eosc.pl",
           "url": "mailto:onboarding@eosc.pl"
         },
         {
-          "label": "Businesses - business@eosc-dih.eu",
-          "url": "mailto:business@eosc-dih.eu"
+          "label": "support@eosc.pl",
+          "url": "mailto:support@eosc.pl"
         }
       ]
     }
