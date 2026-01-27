@@ -41,7 +41,7 @@ class EoscCommonMainFooter extends Component {
           </div>
 
           <div className="eosc-common copyright container">
-            <span className="copy-text">Copyright 2025 &nbsp;&nbsp; | &nbsp;&nbsp; All rights reserved</span>
+            <span className="copy-text">Copyright 2026 &nbsp;&nbsp; | &nbsp;&nbsp; All rights reserved</span>
             &nbsp;&nbsp; | &nbsp;&nbsp;
             <a href={privacyPolicy}>Privacy policy</a>
             &nbsp;&nbsp; | &nbsp;&nbsp;
