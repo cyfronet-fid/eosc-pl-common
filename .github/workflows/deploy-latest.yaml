@@ -23,7 +23,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: Install dependecies
+      - name: Install dependencies
         run: yarn install && yarn global add gulp-cli
       - name: Build libraries with different data sets
         run: |
@@ -33,6 +33,7 @@ jobs:
       - name: Build documentation
         run: yarn run build:docs
 
+      #      link: https://github.com/minio/mc
       - name: Install mc
         run: curl -sSL https://dl.min.io/client/mc/release/linux-amd64/mc -o /usr/local/bin/mc && chmod +x /usr/local/bin/mc
 
@@ -40,6 +41,4 @@ jobs:
         run: mc alias set s3 "${{ secrets.AWS_S3_ENDPOINT }}" "${{ secrets.AWS_ACCESS_KEY_ID }}" "${{ secrets.AWS_SECRET_ACCESS_KEY }}" --api S3v4
 
       - name: Upload dist to S3 (per branch)
-        run: |
-          DEST="pr-${GITHUB_REF#refs/heads/}"
-          mc mirror --overwrite dist s3/${{ secrets.AWS_S3_BUCKET }}/latest
+        run: mc mirror --overwrite --remove dist/ s3/${{ secrets.AWS_S3_BUCKET }}/latest/
