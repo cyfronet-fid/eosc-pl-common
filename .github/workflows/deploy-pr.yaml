@@ -46,4 +46,4 @@ jobs:
       - name: Upload dist to S3 (per branch)
         run: |
           DEST="pr-${GITHUB_REF#refs/heads/}"
-          mc mirror --overwrite --remove --attr "x-amz-acl=public-read" dist/ s3/${{ secrets.AWS_S3_BUCKET }}/$DEST/
+          mc mirror --overwrite --remove --attr "x-amz-acl=public-read" dist s3/${{ secrets.AWS_S3_BUCKET }}/$DEST
