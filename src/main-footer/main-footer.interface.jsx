@@ -19,32 +19,37 @@ class EoscCommonMainFooter extends Component {
       })
     ),
     termsOfUse: PropTypes.string,
-    privacyPolicy: PropTypes.string
+    privacyPolicy: PropTypes.string,
+    logoPack: PropTypes.string
   };
 
   static defaultProps = {
     production: environment.production,
     socialIcons: environment.mainFooterConfig.socials,
-    termsOfUse: null,
-    privacyPolicy: null
+    termsOfUse: "https://eosc.pl/terms-of-use",
+    privacyPolicy: "https://eosc.pl/privacy-policy",
+    logoPack: "https://s3.cloud.cyfronet.pl/eosc-pl-common/assets/eosc-node-poland.zip"
   };
 
   render(props) {
-    const { production, termsOfUse, privacyPolicy } = fieldsToCamelCase(usePropTypes(props, EoscCommonMainFooter));
+    const { production, termsOfUse, privacyPolicy, logoPack } = fieldsToCamelCase(usePropTypes(props, EoscCommonMainFooter));
     return (
       <div>
         <footer className={`eosc-common footer pt-3 pb-3 ${production ? "" : "demo"}`}>
           <div className="container">
             <EoscMainFooterCols termsOfUse={termsOfUse} privacyPolicy={privacyPolicy} />
           </div>
+
+          <div className="eosc-common copyright container">
+            <span className="copy-text">Copyright 2026 &nbsp;&nbsp; | &nbsp;&nbsp; All rights reserved</span>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <a href={privacyPolicy}>Privacy policy</a>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <a href={termsOfUse}>Terms of use</a>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <a href={logoPack}>Download Logo</a>
+          </div>
         </footer>
-        <div className="eosc-common copyright container">
-          <span className="copy-text">Copyright 2025 &nbsp;&nbsp; | &nbsp;&nbsp; All rights reserved</span>
-          &nbsp;&nbsp; | &nbsp;&nbsp;
-          <a href="https://eosc.pl/privacy-policy">Privacy policy</a>
-          &nbsp;&nbsp; | &nbsp;&nbsp;
-          <a href="https://eosc.pl/terms-of-use">Terms of use</a>
-        </div>
       </div>
     );
   }
