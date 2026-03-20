@@ -150,7 +150,7 @@
           line-height: 32px;
           text-align: center;
           background: none;
-          color: shared.$color-primary;
+          color: #363939;
 
           > svg {
             margin-left: 0.5em;
@@ -162,7 +162,7 @@
           left: auto !important;
           background: shared.$color-white;
           min-width: 200px;
-          padding: 0 0 4px;
+          padding: 8px 0 8px;
           border: 1px solid #eee;
         }
       }
@@ -304,9 +304,9 @@ ul.login-dropdown {
 }
 
 .commons-header .menu-icon .navicon {
-  background: #333;
+  background: #363939;
   display: block;
-  height: 3px;
+  height: 2px;
   position: relative;
   transition: background .2s ease-out;
   width: 22px;
@@ -387,7 +387,7 @@ ul.login-dropdown {
     align-items: flex-start;
     flex-direction: column;
     align-content: flex-start;
-    margin-top: -13px;
+    margin-top: 0;
   }
 
   .eosc-common.top .left-links .beyond-logo {
@@ -405,7 +405,7 @@ ul.login-dropdown {
 
   .eosc-common.top .right-links {
     position: absolute;
-    top: 22px;
+    top: 14px;
     display: block;
     right: 10px;
   }
@@ -421,6 +421,34 @@ ul.login-dropdown {
   .eosc-common.top .center-links li {
     width: 100%;
     margin: 4px 0;
+  }
+
+  .eosc-common.top .right-links .dropdown .account-dropdown span {
+    display: none;
+  }
+
+  .commons-header .menu-icon {
+    padding: 13px 10px;
+  }
+
+  .eosc-common.top .right-links .dropdown .account-dropdown > svg {
+    margin-left: 0;
+  }
+
+}
+
+
+@media screen and (max-width: 576px) {
+
+  .commons-header .menu-icon {
+    left: auto;
+    right: 5px;
+    padding: 13px 5px
+  }
+
+  .eosc-common.top .right-links {
+    top: 14px;
+    right: 55px;
   }
 
 }
