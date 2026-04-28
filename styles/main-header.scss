@@ -119,6 +119,10 @@
       #login-btn {
         a {
           color: black;
+
+          &:hover {
+            color: shared.$color-primary;
+          }
         }
       }
 
@@ -228,6 +232,14 @@
           .fa-chevron-down {
             flex-shrink: 0;
             width: 12px;
+          }
+
+          &:hover {
+            color: shared.$color-primary;
+          }
+
+          &:focus {
+            outline: 1px solid shared.$color-8;
           }
         }
 
