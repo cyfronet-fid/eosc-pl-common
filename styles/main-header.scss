@@ -150,7 +150,7 @@
           line-height: 32px;
           text-align: center;
           background: none;
-          color: shared.$color-primary;
+          color: shared.$color-8;
 
           > svg {
             margin-left: 0.5em;
@@ -187,7 +187,7 @@
         }
 
         a {
-          color: shared.$color-primary;
+          color: shared.$color-8;
           padding-bottom: 4px;
           font-weight: 400;
           text-decoration: none;
@@ -198,7 +198,7 @@
           }
 
           &:hover {
-            color: shared.$palette-gray-50;
+            color: shared.$color-primary;
             text-decoration: none;
           }
         }
