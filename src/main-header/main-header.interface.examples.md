@@ -219,10 +219,10 @@ Use default eosc links with custom tab definded via `custom-tabs`
 
 ```js
 <EoscCommonMainHeader
-  username="John Doe"
-  on-logout="alert('logout btn');"
-  login-url="https://marketplace.eosc.pl/users/auth/checkin"
-  show-eosc-links="true"
-  custom-tabs='[{"id": "provider", "name": "Provider", "links": [{"caption": "Some Link", "href": "/backoffice"}, {"caption": "Help", "href": "/help"}]}]'
+    username="John Doe"
+    on-logout="alert('logout btn');"
+    login-url="https://marketplace.eosc.pl/users/auth/checkin"
+    show-eosc-links="true"
+    custom-tabs='[{"id":"provider","name":"Provider","links":[{"caption":"Backoffice","href":"/backoffice"},{"caption":"Ordering system","href":"#","dividerAfter":true},{"caption":"+ Add new service","href":"#"},{"caption":"+ Add new provider","href":"#"},{"caption":"+ Add new catalogue","href":"#","dividerAfter":true},{"caption":"Documentation","href":"#"}]}]'
 ></EoscCommonMainHeader>
 ```
