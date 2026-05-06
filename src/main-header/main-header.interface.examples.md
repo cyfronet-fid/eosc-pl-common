@@ -223,6 +223,6 @@ Use default eosc links with custom tab definded via `custom-tabs`
     on-logout="alert('logout btn');"
     login-url="https://marketplace.eosc.pl/users/auth/checkin"
     show-eosc-links="true"
-    custom-tabs='[{"id":"provider","name":"Provider","links":[{"caption":"Backoffice","href":"/backoffice"},{"caption":"Ordering system","href":"#","dividerAfter":true},{"caption":"+ Add new service","href":"#"},{"caption":"+ Add new provider","href":"#"},{"caption":"+ Add new catalogue","href":"#","dividerAfter":true},{"caption":"Documentation","href":"#"}]}]'
+    custom-tabs='[{"id":"provider","name":"Provider","links":[{"caption":"Backoffice","href":"https://marketplace.eosc.pl/backoffice/services"},{"caption":"Ordering system","href":"https://bos.eosc.pl/","dividerAfter":true},{"caption":"+ Add new service","href":"https://marketplace.eosc.pl/backoffice/services/new"},{"caption":"+ Add new provider","href":"https://marketplace.eosc.pl/backoffice/providers/new/wizard"},{"caption":"+ Add new catalogue","href":"https://marketplace.eosc.pl/backoffice/catalogues/new","dividerAfter":true},{"caption":"Documentation","href":"#"}]}]'
 ></EoscCommonMainHeader>
 ```

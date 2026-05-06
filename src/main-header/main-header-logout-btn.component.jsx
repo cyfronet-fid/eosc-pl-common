@@ -64,13 +64,13 @@ export default class EoscMainHeaderLogoutBtn extends Component {
     const dashboardUrl = environment.dashboardUrl;
     return [
       //{ href: dashboardUrl, caption: "Dashboard" },
-      { href: `#`, caption: "Browse resources" },
+      { href: `https://eosc.pl/search/all_collection?q=*`, caption: "Browse resources" },
       { href: `${marketplaceUrl}/projects`, caption: "Manage projects" },
-      { href: `https://data.eosc.pl/`, caption: "Work with data", className: "one-data", dividerAfter: true },
+      { href: `https://data.eosc.pl/ozw/onezone/i`, caption: "Work with data", className: "one-data", dividerAfter: true },
       // favourites will be move shortly to dashboard
       // { href: "/favourites", caption: "Favourite resources", "data-e2e": "favourites" },
       { href: `${marketplaceUrl}/profile`, caption: "Portal profile", "data-e2e": "profile" },
-      { href: `#`, caption: "Onedata profile", className: "one-data", dividerAfter: true },
+      { href: `https://data.eosc.pl/ozw/onezone/i#/onedata/users`, caption: "Onedata profile", className: "one-data", dividerAfter: true },
       { href: `${marketplaceUrl}/api_docs`, caption: "Documentation" }
     ];
   }
