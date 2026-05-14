@@ -63,12 +63,15 @@ export default class EoscMainHeaderLogoutBtn extends Component {
     const marketplaceUrl = environment.marketplaceUrl;
     const dashboardUrl = environment.dashboardUrl;
     return [
-      { href: dashboardUrl, caption: "Dashboard" },
-      { href: `${marketplaceUrl}/projects`, caption: "My projects" },
+      //{ href: dashboardUrl, caption: "Dashboard" },
+      { href: `https://eosc.pl/search/all_collection?q=*`, caption: "Browse resources" },
+      { href: `${marketplaceUrl}/projects`, caption: "Manage projects" },
+      { href: `https://data.eosc.pl/ozw/onezone/i`, caption: "Work with data", className: "one-data", dividerAfter: true },
       // favourites will be move shortly to dashboard
       // { href: "/favourites", caption: "Favourite resources", "data-e2e": "favourites" },
-      { href: `${marketplaceUrl}/profile`, caption: "Profile", "data-e2e": "profile" },
-      { href: `${marketplaceUrl}/api_docs`, caption: "Marketplace API", "data-e2e": "marketplace-api" }
+      { href: `${marketplaceUrl}/profile`, caption: "Portal profile", "data-e2e": "profile" },
+      { href: `https://data.eosc.pl/ozw/onezone/i#/onedata/users`, caption: "Onedata profile", className: "one-data", dividerAfter: true },
+      { href: `${marketplaceUrl}/api_docs`, caption: "Documentation" }
     ];
   }
 
@@ -107,12 +110,24 @@ export default class EoscMainHeaderLogoutBtn extends Component {
   renderDefaultTabContent(props, onLogout, logoutUrl) {
     return (
         <Fragment>
-          {(props.showEoscLinks ? this.eoscLinks() : []).map((link, index) => (
-              <Dropdown.Item key={`eosc-${index}`} {...link}>{link.caption}</Dropdown.Item>
-          ))}
+          {(props.showEoscLinks ? this.eoscLinks() : []).map((link, index) => {
+            const { dividerAfter, caption, ...itemProps } = link;
+
+            return (
+                <Fragment key={`eosc-${index}`}>
+                  <Dropdown.Item {...itemProps}>
+                    {caption}
+                  </Dropdown.Item>
+
+                  {dividerAfter && <Dropdown.Divider className="eosc-links-divider" />}
+                </Fragment>
+            );
+          })}
 
           {props.profileLinks.map((link, index) => (
-              <Dropdown.Item key={`profile-${index}`} {...link}>{link.caption}</Dropdown.Item>
+              <Dropdown.Item key={`profile-${index}`} {...link}>
+                {link.caption}
+              </Dropdown.Item>
           ))}
         </Fragment>
     );
@@ -121,9 +136,21 @@ export default class EoscMainHeaderLogoutBtn extends Component {
   renderCustomTabContent(tab) {
     return (
         <Fragment>
-          {tab.links && tab.links.map((link, index) => (
-              <Dropdown.Item key={`${tab.id}-${index}`} {...link}>{link.caption}</Dropdown.Item>
-          ))}
+          {tab.links && tab.links.map((link, index) => {
+            const { dividerAfter, caption, ...itemProps } = link;
+
+            return (
+                <Fragment key={`${tab.id}-${index}`}>
+                  <Dropdown.Item {...itemProps}>
+                    {caption}
+                  </Dropdown.Item>
+
+                  {dividerAfter && (
+                      <Dropdown.Divider className="eosc-links-divider" />
+                  )}
+                </Fragment>
+            );
+          })}
         </Fragment>
     );
   }

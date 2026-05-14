@@ -1,6 +1,6 @@
 [
   {
-    "label": "About EOSC PL",
+    "label": "About",
     "url": "https://eosc.gov.pl/"
   },
   {
@@ -8,7 +8,7 @@
     "url": "https://eosc.pl/search/all_collection?q=*"
   },
   {
-    "label": "Onedata",
+    "label": "Work with data",
     "url": "https://data.eosc.pl/"
   }
 ]

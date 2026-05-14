@@ -6,7 +6,7 @@
       "navBtns": [
         {
           "label": "Browse resources",
-          "url": "https://eosc.pl/search/all_collection?q=*&scope=pl"
+          "url": "https://eosc.pl/search/all_collection?q=*"
         },
         {
           "label": "Your projects",
