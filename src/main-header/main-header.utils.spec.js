@@ -1,8 +1,9 @@
 import { isBtnActive } from "./main-header.utils";
 
 // Helper method to mock window.location
-const mockLocation = (hostname, protocol, pathname) => {
+const mockLocation = (hostname, protocol, pathname, href = `${protocol}//${hostname}${pathname}`) => {
   const location = {
+    href,
     hostname,
     protocol,
     pathname
@@ -54,5 +55,33 @@ describe("Main header btns underline", () => {
     mockLocation("localhost", "https:", "/contact-us");
     expect(isBtnActive(urls, urls[0])).toBe(false);
     expect(isBtnActive(urls, urls[1])).toBe(true);
+  });
+
+  test("should underline Browse resources on Marketplace and Discovery Hub pages", () => {
+    const urls = [
+      "https://eosc.gov.pl/",
+      "https://eosc.pl/search/all_collection?q=*",
+      "https://data.eosc.pl/"
+    ];
+
+    mockLocation("marketplace.eosc.pl", "https:", "/services");
+    expect(isBtnActive(urls, urls[1])).toBe(true);
+    expect(isBtnActive(urls, urls[2])).toBe(false);
+
+    mockLocation("eosc.pl", "https:", "/providers");
+    expect(isBtnActive(urls, urls[1])).toBe(true);
+    expect(isBtnActive(urls, urls[2])).toBe(false);
+  });
+
+  test("should underline Work with data on Onedata pages", () => {
+    const urls = [
+      "https://eosc.gov.pl/",
+      "https://eosc.pl/search/all_collection?q=*",
+      "https://data.eosc.pl/"
+    ];
+
+    mockLocation("data.eosc.pl", "https:", "/ozw/onezone/i", "https://data.eosc.pl/ozw/onezone/i#/onedata/users");
+    expect(isBtnActive(urls, urls[1])).toBe(false);
+    expect(isBtnActive(urls, urls[2])).toBe(true);
   });
 });
