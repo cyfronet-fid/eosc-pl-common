@@ -266,14 +266,19 @@
             margin-bottom: 17px;
 
             .dropdown-tabs {
+              background: #fff !important;
+
+              &.nav-tabs {
+                background: #fff !important;
+                align-items: flex-end;
+              }
 
               a.nav-link {
                 font-weight: 400;
                 text-transform: uppercase;
                 font-size: 15px;
                 color: #363939;
-                padding-bottom: 10px;
-                padding-top: 6px;
+                padding: 6px 9px 10px;
 
                 &:hover {
                   color: shared.$color-primary;
@@ -283,6 +288,7 @@
                 &.active {
                   color: shared.$color-primary;
                   border-bottom: 2px solid shared.$color-primary;
+                  padding-bottom: 9px;
                 }
 
               }
