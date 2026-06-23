@@ -315,6 +315,11 @@
               background: #FEF2F4;
             }
 
+            &:focus {
+              outline: 1px solid #257B85;
+              background: #fff;
+            }
+
             &.one-data {
               background-image: url(assets/one-data.svg);
               background-repeat: no-repeat;
