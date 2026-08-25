@@ -263,4 +263,3 @@ Use provider user roles with custom provider tabs defined via `provider-custom-t
     login-url="https://marketplace.eosc.pl/users/auth/checkin"
 ></EoscCommonMainHeader>
 ```
-
