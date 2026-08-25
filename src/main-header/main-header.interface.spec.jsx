@@ -12,8 +12,11 @@ import {
   AUTOLOGIN_COOKIE_NAME,
   getCookieConfig,
   LOGIN_ATTEMPT_COOKIE_NAME,
-  LOGOUT_ATTEMPT_COOKIE_NAME
 } from "./auto-login.utils";
+
+jest.mock("react-responsive", () => ({
+  useMediaQuery: () => true
+}));
 
 // Mock location
 delete window.location;
@@ -192,4 +195,108 @@ describe("Main Header Component", () => {
       });
     });
   });
+
+  describe("Custom Tabs & User Roles", () => {
+    test("should display default user custom tabs for regular user", async () => {
+      const user = userEvent.setup();
+      const props = {
+        username: "Test User",
+        "logout-url": "https://test.pl"
+      };
+
+      render(<EoscCommonMainHeader {...props} />);
+
+      const toggle = screen.getByText("Test User");
+      await user.click(toggle);
+
+      const providerTab = screen.getByText("Provider");
+      await user.click(providerTab);
+
+      expect(screen.getByText("Become provider")).toBeInTheDocument();
+      expect(screen.getByText("Documentation")).toBeInTheDocument();
+    });
+
+    test("should allow overriding user custom tabs for regular user", async () => {
+      const user = userEvent.setup();
+      const customTabs = JSON.stringify([
+        {
+          id: "custom",
+          name: "Custom Tab",
+          links: [{ caption: "Custom User Link", href: "https://custom.user.pl" }]
+        }
+      ]);
+
+      const props = {
+        username: "Test User",
+        "logout-url": "https://test.pl",
+        "custom-tabs": customTabs
+      };
+
+      render(<EoscCommonMainHeader {...props} />);
+
+      const toggle = screen.getByText("Test User");
+      await user.click(toggle);
+
+      const customTab = screen.getByText("Custom Tab");
+      await user.click(customTab);
+
+      expect(screen.getByText("Custom User Link")).toBeInTheDocument();
+      expect(screen.queryByText("Become provider")).not.toBeInTheDocument();
+    });
+
+    test("should display provider custom tabs when user role is admin or coordinator", async () => {
+      const user = userEvent.setup();
+      const props = {
+        username: "Admin User",
+        "logout-url": "https://test.pl",
+        "user-roles": JSON.stringify(["admin"])
+      };
+
+      render(<EoscCommonMainHeader {...props} />);
+
+      const toggle = screen.getByText("Admin User");
+      await user.click(toggle);
+
+      const providerTab = screen.getByText("Provider");
+      await user.click(providerTab);
+
+      expect(screen.getByText("Backoffice")).toBeInTheDocument();
+      expect(screen.getByText("Ordering system")).toBeInTheDocument();
+      expect(screen.getByText("+ Add new service")).toBeInTheDocument();
+      expect(screen.getByText("+ Add new provider")).toBeInTheDocument();
+      expect(screen.getByText("+ Add new catalogue")).toBeInTheDocument();
+      expect(screen.getByText("Documentation")).toBeInTheDocument();
+      expect(screen.queryByText("Become provider")).not.toBeInTheDocument();
+    });
+
+    test("should allow overriding provider custom tabs via provider-custom-tabs", async () => {
+      const user = userEvent.setup();
+      const providerCustomTabs = JSON.stringify([
+        {
+          id: "provider",
+          name: "Provider",
+          links: [{ caption: "Custom Provider Link", href: "https://custom.provider.pl" }]
+        }
+      ]);
+
+      const props = {
+        username: "Coordinator User",
+        "logout-url": "https://test.pl",
+        "user-roles": JSON.stringify(["coordinator"]),
+        "provider-custom-tabs": providerCustomTabs
+      };
+
+      render(<EoscCommonMainHeader {...props} />);
+
+      const toggle = screen.getByText("Coordinator User");
+      await user.click(toggle);
+
+      const providerTab = screen.getByText("Provider");
+      await user.click(providerTab);
+
+      expect(screen.getByText("Custom Provider Link")).toBeInTheDocument();
+      expect(screen.queryByText("Backoffice")).not.toBeInTheDocument();
+    });
+  });
 });
+

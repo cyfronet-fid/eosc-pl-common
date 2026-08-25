@@ -9,6 +9,19 @@ import { renderComponent } from "../../core/render";
 import { fieldsToCamelCase, usePropTypes } from "../../core/utils";
 import RWD from "../../core/rwd.hoc";
 
+import { CUSTOM_TABS_USER, CUSTOM_TABS_PROVIDER } from "./main-header.constants";
+
+function safeParseJson(value, fallback = []) {
+  if (typeof value === "string") {
+    try {
+      return JSON.parse(value);
+    } catch {
+      return fallback;
+    }
+  }
+  return value || fallback;
+}
+
 /**
  * @version 1.1
  */
@@ -24,8 +37,10 @@ class EoscCommonMainHeader extends Component {
     "on-logout": isJsScript,
     autoLogin: PropTypes.bool,
     "show-eosc-links": PropTypes.bool,
-    "profile-links": PropTypes.string,
-    "custom-tabs": PropTypes.string
+    "profile-links": PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+    "custom-tabs": PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+    "user-roles": PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+    "provider-custom-tabs": PropTypes.oneOfType([PropTypes.string, PropTypes.array])
   };
 
   static defaultProps = {
@@ -37,7 +52,9 @@ class EoscCommonMainHeader extends Component {
     autoLogin: true,
     "show-eosc-links": false,
     "profile-links": "[]",
-    "custom-tabs": "[]"
+    "custom-tabs": "[]",
+    "user-roles": "[]",
+    "provider-custom-tabs": "[]"
   };
 
   render(props) {
@@ -45,8 +62,31 @@ class EoscCommonMainHeader extends Component {
      * IMPORTANT!!! By default is on
      */
     const parsedProps = fieldsToCamelCase(usePropTypes(props, EoscCommonMainHeader));
-    parsedProps.profileLinks = JSON.parse(parsedProps.profileLinks)
-    parsedProps.customTabs = JSON.parse(parsedProps.customTabs)
+
+    const userRoles = safeParseJson(parsedProps.userRoles, []);
+    const rawCustomTabs = safeParseJson(parsedProps.customTabs, []);
+    const rawProviderCustomTabs = safeParseJson(parsedProps.providerCustomTabs, []);
+    parsedProps.profileLinks = safeParseJson(parsedProps.profileLinks, []);
+
+    const isProvider = Array.isArray(userRoles) && userRoles.some((role) => role === "admin" || role === "coordinator" || role === "executive");
+
+    if (isProvider) {
+      if (Array.isArray(rawProviderCustomTabs) && rawProviderCustomTabs.length > 0) {
+        parsedProps.customTabs = rawProviderCustomTabs;
+      } else if (Array.isArray(rawCustomTabs) && rawCustomTabs.length > 0) {
+        parsedProps.customTabs = rawCustomTabs;
+      } else {
+        parsedProps.customTabs = CUSTOM_TABS_PROVIDER;
+      }
+    } else {
+      if (Array.isArray(rawCustomTabs) && rawCustomTabs.length > 0) {
+        parsedProps.customTabs = rawCustomTabs;
+      } else {
+        parsedProps.customTabs = CUSTOM_TABS_USER;
+      }
+    }
+
+
     const { autoLogin } = parsedProps;
     if (isAutologinOn(autoLogin)) {
       tryAutologin(parsedProps);

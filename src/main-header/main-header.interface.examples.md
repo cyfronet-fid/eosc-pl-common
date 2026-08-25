@@ -215,7 +215,7 @@ Use default eosc links with custom links defined via `profile-links`
 ></EoscCommonMainHeader>
 ```
 
-Use default eosc links with custom tab definded via `custom-tabs`
+Use default eosc links with custom tab defined via `custom-tabs`
 
 ```js
 <EoscCommonMainHeader
@@ -227,14 +227,40 @@ Use default eosc links with custom tab definded via `custom-tabs`
 ></EoscCommonMainHeader>
 ```
 
-Use default eosc links with custom tab definded via `custom-tabs`
+Use provider user roles (`admin` / `coordinator` / `executive`) for automatic provider custom tabs view:
 
 ```js
 <EoscCommonMainHeader
     username="John Doe"
+    user-roles='["admin"]'
+    show-eosc-links="true"
     on-logout="alert('logout btn');"
     login-url="https://marketplace.eosc.pl/users/auth/checkin"
-    show-eosc-links="true"
-    custom-tabs='[{"id":"provider","name":"Provider","links":[{"caption":"Become provider","href":"https://marketplace.eosc.pl/backoffice/services","dividerAfter":true},{"caption":"Documentation","href":"#"}]}]'
 ></EoscCommonMainHeader>
 ```
+
+Use other roles or don't use them at all for default custom user tabs:
+
+```js
+<EoscCommonMainHeader
+    username="John Doe"
+    user-roles='["nonexisting_role"]'
+    show-eosc-links="true"
+    on-logout="alert('logout btn');"
+    login-url="https://marketplace.eosc.pl/users/auth/checkin"
+></EoscCommonMainHeader>
+```
+
+Use provider user roles with custom provider tabs defined via `provider-custom-tabs`:
+
+```js
+<EoscCommonMainHeader
+    username="John Doe"
+    user-roles='["coordinator"]'
+    show-eosc-links="true"
+    provider-custom-tabs='[{"id":"custom-provider","name":"Provider","links":[{"caption":"Custom Link","href":"https://example.com"}]}]'
+    on-logout="alert('logout btn');"
+    login-url="https://marketplace.eosc.pl/users/auth/checkin"
+></EoscCommonMainHeader>
+```
+
