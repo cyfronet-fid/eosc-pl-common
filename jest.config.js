@@ -5,8 +5,8 @@ module.exports = {
   setupFilesAfterEnv: ["./jest.setup.js"],
   cacheDirectory: "./.cache",
   maxWorkers: "80%",
-  transform: { 
-    "\\.(js|jsx)$": "babel-jest" 
+  transform: {
+    "\\.(js|jsx)$": "babel-jest"
   },
   moduleDirectories: ["node_modules"],
   notify: true,
@@ -20,7 +20,7 @@ module.exports = {
 
   // Usuń extensionsToTreatAsEsm - powoduje problemy
   // extensionsToTreatAsEsm: ['.jsx'],
-  
+
   // Poprawiona konfiguracja transformIgnorePatterns
   transformIgnorePatterns: [
     "node_modules/(?!(@testing-library/preact|@testing-library/jest-dom|@testing-library/user-event|preact)/)"
@@ -28,6 +28,10 @@ module.exports = {
 
   // Mapowanie modułów dla preact
   moduleNameMapper: {
+    "^react$": "preact/compat",
+    "^react-dom/test-utils$": "preact/test-utils",
+    "^react-dom$": "preact/compat",
+    "^react/jsx-runtime$": "preact/jsx-runtime",
     "^@testing-library/preact$": "<rootDir>/node_modules/@testing-library/preact/dist/cjs/index.js",
     "^preact$": "<rootDir>/node_modules/preact/dist/preact.js",
     "^preact/(.*)$": "<rootDir>/node_modules/preact/$1"
@@ -43,11 +47,11 @@ module.exports = {
       branches: 50,
       functions: 60,
       lines: 70,
-      statements: -10,
-    },
+      statements: -10
+    }
   },
   displayName: {
     name: "EOSC Portal Commons",
-    color: "blue",
-  },
+    color: "blue"
+  }
 };
