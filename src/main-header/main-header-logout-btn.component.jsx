@@ -14,16 +14,16 @@ import * as React from "react";
 import FasChevronDownIcon from "../../core/icons/fas-chevron-down.icon";
 
 const AccountToggle = React.forwardRef(({ children, onClick }, ref) => (
-    <a
-        className={"account-dropdown"}
-        ref={ref}
-        onClick={(e) => {
-          e.preventDefault();
-          onClick(e);
-        }}
-    >
-      {children}
-    </a>
+  <a
+    className={"account-dropdown"}
+    ref={ref}
+    onClick={(e) => {
+      e.preventDefault();
+      onClick(e);
+    }}
+  >
+    {children}
+  </a>
 ));
 
 export default class EoscMainHeaderLogoutBtn extends Component {
@@ -61,17 +61,16 @@ export default class EoscMainHeaderLogoutBtn extends Component {
 
   eoscLinks() {
     const marketplaceUrl = environment.marketplaceUrl;
-    const dashboardUrl = environment.dashboardUrl;
     return [
       //{ href: dashboardUrl, caption: "Dashboard" },
-      { href: `https://eosc.pl/search/all_collection?q=*`, caption: "Browse resources" },
+      { href: "https://eosc.pl/search/all_collection?q=*", caption: "Browse resources" },
       { href: `${marketplaceUrl}/projects`, caption: "Manage projects" },
-      { href: `https://data.eosc.pl/ozw/onezone/i`, caption: "Work with data", className: "one-data", dividerAfter: true },
+      { href: "https://data.eosc.pl/ozw/onezone/i", caption: "Work with data", className: "one-data", dividerAfter: true },
       // favourites will be move shortly to dashboard
       // { href: "/favourites", caption: "Favourite resources", "data-e2e": "favourites" },
       { href: `${marketplaceUrl}/profile`, caption: "Portal profile", "data-e2e": "profile" },
-      { href: `https://data.eosc.pl/ozw/onezone/i#/onedata/users`, caption: "Onedata profile", className: "one-data", dividerAfter: true },
-      { href: `${marketplaceUrl}/api_docs`, caption: "Documentation" }
+      { href: "https://data.eosc.pl/ozw/onezone/i#/onedata/users", caption: "Onedata profile", className: "one-data", dividerAfter: true },
+      { href: "https://eosc.pl/documentation", caption: "Documentation" }
     ];
   }
 
@@ -83,75 +82,75 @@ export default class EoscMainHeaderLogoutBtn extends Component {
 
   renderLogoutItem(props, onLogout, logoutUrl) {
     return (
-        <Dropdown.Item
-            className="text-end"
-            href={logoutUrl || "#!"}
-            id="logout-btn"
-            data-e2e="logout"
-            onClick={(event) => {
-              Cookies.set(
-                  LOGOUT_ATTEMPT_COOKIE_NAME,
-                  LOGOUT_ATTEMPT_COOKIE_NAME,
-                  getCookieConfig(window.location.hostname)
-              );
-              const { autoLoginDomains } = environment.defaultConfiguration;
-              autoLoginDomains.forEach((domain) => Cookies.remove(AUTOLOGIN_COOKIE_NAME, getCookieConfig(domain)));
-              if (onLogout && onLogout.trim() !== "") {
-                callAll(event, onLogout);
-              }
-            }}
-        >
+      <Dropdown.Item
+        className="text-end"
+        href={logoutUrl || "#!"}
+        id="logout-btn"
+        data-e2e="logout"
+        onClick={(event) => {
+          Cookies.set(
+            LOGOUT_ATTEMPT_COOKIE_NAME,
+            LOGOUT_ATTEMPT_COOKIE_NAME,
+            getCookieConfig(window.location.hostname)
+          );
+          const { autoLoginDomains } = environment.defaultConfiguration;
+          autoLoginDomains.forEach((domain) => Cookies.remove(AUTOLOGIN_COOKIE_NAME, getCookieConfig(domain)));
+          if (onLogout && onLogout.trim() !== "") {
+            callAll(event, onLogout);
+          }
+        }}
+      >
           Logout
-          <span className="ms-2">→</span>
-        </Dropdown.Item>
+        <span className="ms-2">→</span>
+      </Dropdown.Item>
     );
   }
 
-  renderDefaultTabContent(props, onLogout, logoutUrl) {
+  renderDefaultTabContent(props) {
     return (
-        <Fragment>
-          {(props.showEoscLinks ? this.eoscLinks() : []).map((link, index) => {
-            const { dividerAfter, caption, ...itemProps } = link;
+      <Fragment>
+        {(props.showEoscLinks ? this.eoscLinks() : []).map((link, index) => {
+          const { dividerAfter, caption, ...itemProps } = link;
 
-            return (
-                <Fragment key={`eosc-${index}`}>
-                  <Dropdown.Item {...itemProps}>
-                    {caption}
-                  </Dropdown.Item>
-
-                  {dividerAfter && <Dropdown.Divider className="eosc-links-divider" />}
-                </Fragment>
-            );
-          })}
-
-          {props.profileLinks.map((link, index) => (
-              <Dropdown.Item key={`profile-${index}`} {...link}>
-                {link.caption}
+          return (
+            <Fragment key={`eosc-${index}`}>
+              <Dropdown.Item {...itemProps}>
+                {caption}
               </Dropdown.Item>
-          ))}
-        </Fragment>
+
+              {dividerAfter && <Dropdown.Divider className="eosc-links-divider" />}
+            </Fragment>
+          );
+        })}
+
+        {props.profileLinks.map((link, index) => (
+          <Dropdown.Item key={`profile-${index}`} {...link}>
+            {link.caption}
+          </Dropdown.Item>
+        ))}
+      </Fragment>
     );
   }
 
   renderCustomTabContent(tab) {
     return (
-        <Fragment>
-          {tab.links && tab.links.map((link, index) => {
-            const { dividerAfter, caption, ...itemProps } = link;
+      <Fragment>
+        {tab.links && tab.links.map((link, index) => {
+          const { dividerAfter, caption, ...itemProps } = link;
 
-            return (
-                <Fragment key={`${tab.id}-${index}`}>
-                  <Dropdown.Item {...itemProps}>
-                    {caption}
-                  </Dropdown.Item>
+          return (
+            <Fragment key={`${tab.id}-${index}`}>
+              <Dropdown.Item {...itemProps}>
+                {caption}
+              </Dropdown.Item>
 
-                  {dividerAfter && (
-                      <Dropdown.Divider className="eosc-links-divider" />
-                  )}
-                </Fragment>
-            );
-          })}
-        </Fragment>
+              {dividerAfter && (
+                <Dropdown.Divider className="eosc-links-divider" />
+              )}
+            </Fragment>
+          );
+        })}
+      </Fragment>
     );
   }
 
@@ -181,55 +180,55 @@ export default class EoscMainHeaderLogoutBtn extends Component {
     const currentActiveTab = activeTab || "user";
 
     return (
-        <Fragment>
-          <li>
-            <Dropdown>
-              <Dropdown.Toggle id="dropdown-menu-button" as={AccountToggle}>
-                <FasUserIcon />
-                <span>{username}</span>
-                <FasChevronDownIcon />
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                {hasCustomTabs ? (
-                    <Fragment>
-                      <div className="dropdown-tabs-container" onClick={(e) => e.stopPropagation()}>
-                        <Nav variant="tabs" activeKey={currentActiveTab} className="dropdown-tabs">
-                          <Nav.Item>
-                            <Nav.Link
-                                eventKey="user"
-                                onClick={(e) => this.handleTabClick("user", e)}
-                            >
+      <Fragment>
+        <li>
+          <Dropdown>
+            <Dropdown.Toggle id="dropdown-menu-button" as={AccountToggle}>
+              <FasUserIcon />
+              <span>{username}</span>
+              <FasChevronDownIcon />
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              {hasCustomTabs ? (
+                <Fragment>
+                  <div className="dropdown-tabs-container" onClick={(e) => e.stopPropagation()}>
+                    <Nav variant="tabs" activeKey={currentActiveTab} className="dropdown-tabs">
+                      <Nav.Item>
+                        <Nav.Link
+                          eventKey="user"
+                          onClick={(e) => this.handleTabClick("user", e)}
+                        >
                               User
-                            </Nav.Link>
-                          </Nav.Item>
-                          {customTabs.map((tab) => (
-                              <Nav.Item key={tab.id}>
-                                <Nav.Link
-                                    eventKey={tab.id}
-                                    onClick={(e) => this.handleTabClick(tab.id, e)}
-                                >
-                                  {tab.name}
-                                </Nav.Link>
-                              </Nav.Item>
-                          ))}
-                        </Nav>
-                      </div>
-                      <Dropdown.Divider />
-                      {this.renderTabsContent(props, onLogout, logoutUrl)}
-                      <Dropdown.Divider />
-                      {this.renderLogoutItem(props, onLogout, logoutUrl)}
-                    </Fragment>
-                ) : (
-                    <Fragment>
-                      {this.renderDefaultTabContent(props, onLogout, logoutUrl)}
-                      <Dropdown.Divider />
-                      {this.renderLogoutItem(props, onLogout, logoutUrl)}
-                    </Fragment>
-                )}
-              </Dropdown.Menu>
-            </Dropdown>
-          </li>
-        </Fragment>
+                        </Nav.Link>
+                      </Nav.Item>
+                      {customTabs.map((tab) => (
+                        <Nav.Item key={tab.id}>
+                          <Nav.Link
+                            eventKey={tab.id}
+                            onClick={(e) => this.handleTabClick(tab.id, e)}
+                          >
+                            {tab.name}
+                          </Nav.Link>
+                        </Nav.Item>
+                      ))}
+                    </Nav>
+                  </div>
+                  <Dropdown.Divider />
+                  {this.renderTabsContent(props, onLogout, logoutUrl)}
+                  <Dropdown.Divider />
+                  {this.renderLogoutItem(props, onLogout, logoutUrl)}
+                </Fragment>
+              ) : (
+                <Fragment>
+                  {this.renderDefaultTabContent(props, onLogout, logoutUrl)}
+                  <Dropdown.Divider />
+                  {this.renderLogoutItem(props, onLogout, logoutUrl)}
+                </Fragment>
+              )}
+            </Dropdown.Menu>
+          </Dropdown>
+        </li>
+      </Fragment>
     );
   }
 }
