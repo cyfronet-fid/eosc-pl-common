@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/preact";
+import { render, screen, waitFor } from "@testing-library/preact";
 import { h } from "preact";
 import userEvent from "@testing-library/user-event";
 import Cookies from "js-cookie";
@@ -11,7 +11,7 @@ import "window-resizeto/polyfill";
 import {
   AUTOLOGIN_COOKIE_NAME,
   getCookieConfig,
-  LOGIN_ATTEMPT_COOKIE_NAME,
+  LOGIN_ATTEMPT_COOKIE_NAME
 } from "./auto-login.utils";
 
 jest.mock("react-responsive", () => ({
