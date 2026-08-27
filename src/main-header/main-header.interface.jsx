@@ -9,17 +9,22 @@ import { renderComponent } from "../../core/render";
 import { fieldsToCamelCase, usePropTypes } from "../../core/utils";
 import RWD from "../../core/rwd.hoc";
 
-import { CUSTOM_TABS_USER, CUSTOM_TABS_PROVIDER } from "./main-header.constants";
 
-function safeParseJson(value, fallback = []) {
+function safeParseJsonArray(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
   if (typeof value === "string") {
     try {
-      return JSON.parse(value);
+      const parsed = JSON.parse(value);
+      return Array.isArray(parsed) ? parsed : [];
     } catch {
-      return fallback;
+      return [];
     }
   }
-  return value || fallback;
+
+  return [];
 }
 
 /**
@@ -63,29 +68,33 @@ class EoscCommonMainHeader extends Component {
      */
     const parsedProps = fieldsToCamelCase(usePropTypes(props, EoscCommonMainHeader));
 
-    const userRoles = safeParseJson(parsedProps.userRoles, []);
-    const rawCustomTabs = safeParseJson(parsedProps.customTabs, []);
-    const rawProviderCustomTabs = safeParseJson(parsedProps.providerCustomTabs, []);
-    parsedProps.profileLinks = safeParseJson(parsedProps.profileLinks, []);
+    const userRoles = safeParseJsonArray(parsedProps.userRoles, []);
+    const rawCustomTabs = safeParseJsonArray(parsedProps.customTabs, []);
+    const rawProviderCustomTabs = safeParseJsonArray(parsedProps.providerCustomTabs, []);
+    parsedProps.profileLinks = safeParseJsonArray(parsedProps.profileLinks, []);
 
-    const isProvider = Array.isArray(userRoles) && userRoles.some((role) => role === "admin" || role === "coordinator" || role === "executive");
+    const isProvider =
+      Array.isArray(userRoles) &&
+      userRoles.some((role) => role === "admin" || role === "coordinator" || role === "executive");
 
+
+    // Custom tabs override the default tabs.
+    // Empty/missing values mean that the default tabs should be used.
     if (isProvider) {
       if (Array.isArray(rawProviderCustomTabs) && rawProviderCustomTabs.length > 0) {
         parsedProps.customTabs = rawProviderCustomTabs;
       } else if (Array.isArray(rawCustomTabs) && rawCustomTabs.length > 0) {
         parsedProps.customTabs = rawCustomTabs;
       } else {
-        parsedProps.customTabs = CUSTOM_TABS_PROVIDER;
+        parsedProps.customTabs = environment.customProviderTabs;
       }
     } else {
       if (Array.isArray(rawCustomTabs) && rawCustomTabs.length > 0) {
         parsedProps.customTabs = rawCustomTabs;
       } else {
-        parsedProps.customTabs = CUSTOM_TABS_USER;
+        parsedProps.customTabs = environment.customUserTabs;
       }
     }
-
 
     const { autoLogin } = parsedProps;
     if (isAutologinOn(autoLogin)) {
@@ -119,9 +128,7 @@ class EoscCommonMainHeader extends Component {
                   />
                 ))}
               </ul>
-              <ul className="right-links">
-                {getAuthBtn(parsedProps)}
-              </ul>
+              <ul className="right-links">{getAuthBtn(parsedProps)}</ul>
             </div>
           </nav>
         </div>

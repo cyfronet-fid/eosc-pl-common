@@ -227,7 +227,9 @@ Use default eosc links with custom tab defined via `custom-tabs`
 ></EoscCommonMainHeader>
 ```
 
-Use provider user roles (`admin` / `coordinator` / `executive`) for automatic provider custom tabs view:
+#### Introducing user-roles
+
+Use provider user roles (`admin` / `coordinator` / `executive`) for default provider custom tabs view:
 
 ```js
 <EoscCommonMainHeader
@@ -239,7 +241,7 @@ Use provider user roles (`admin` / `coordinator` / `executive`) for automatic pr
 ></EoscCommonMainHeader>
 ```
 
-Use other roles or don't use them at all for default custom user tabs:
+Use empty array or any other values than admin/coordinator/executive for default custom tabs:
 
 ```js
 <EoscCommonMainHeader
@@ -258,8 +260,26 @@ Use provider user roles with custom provider tabs defined via `provider-custom-t
     username="John Doe"
     user-roles='["coordinator"]'
     show-eosc-links="true"
-    provider-custom-tabs='[{"id":"custom-provider","name":"Provider","links":[{"caption":"Custom Link","href":"https://example.com"}]}]'
+    provider-custom-tabs='[{"id":"custom-provider","name":"Provider","links":[{"caption":"Custom Provider Link","href":"https://example.com"}]}]'
+    custom-tabs='[{"id":"custom-provider","name":"Provider","links":[{"caption":"Custom User Link","href":"https://example.com"}]}]'
     on-logout="alert('logout btn');"
     login-url="https://marketplace.eosc.pl/users/auth/checkin"
 ></EoscCommonMainHeader>
 ```
+
+Use user roles with custom provider tabs defined via `custom-tabs`:
+
+```js
+<EoscCommonMainHeader
+    username="John Doe"
+    user-roles='["someuser"]'
+    show-eosc-links="true"
+    provider-custom-tabs='[{"id":"custom-provider","name":"Provider","links":[{"caption":"Custom Provider Link","href":"https://example.com"}]}]'
+    custom-tabs='[{"id":"custom-provider","name":"Provider","links":[{"caption":"Custom User Link","href":"https://example.com"}]}]'
+    on-logout="alert('logout btn');"
+    login-url="https://marketplace.eosc.pl/users/auth/checkin"
+></EoscCommonMainHeader>
+```
+
+#### If the user-roles array contains one or more of the following roles admin, provider, or executive, the field provider-custom-tabs is used. Otherwise, custom-tabs is used.
+#### Both fields have default values, which can be overridden by providing a value for the respective field in the component.

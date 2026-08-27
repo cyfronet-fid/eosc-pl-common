@@ -2,7 +2,7 @@ import Cookies from "js-cookie";
 import PropTypes from "prop-types";
 import requiredIf from "react-required-if";
 import { Component, Fragment } from "preact";
-import { environment } from "../../env/env";
+import { environment, discoveryhubUrl, marketplaceUrl, onedataUrl } from "../../env/env";
 import { AUTOLOGIN_COOKIE_NAME, getCookieConfig, LOGOUT_ATTEMPT_COOKIE_NAME } from "./auto-login.utils";
 import { isJsScript } from "../../core/callback.validators";
 import callAll from "../../core/callback";
@@ -60,17 +60,26 @@ export default class EoscMainHeaderLogoutBtn extends Component {
   };
 
   eoscLinks() {
-    const marketplaceUrl = environment.marketplaceUrl;
     return [
       //{ href: dashboardUrl, caption: "Dashboard" },
-      { href: "https://eosc.pl/search/all_collection?q=*", caption: "Browse resources" },
+      { href: `${discoveryhubUrl}/all_collection?q=*`, caption: "Browse resources" },
       { href: `${marketplaceUrl}/projects`, caption: "Manage projects" },
-      { href: "https://data.eosc.pl/ozw/onezone/i", caption: "Work with data", className: "one-data", dividerAfter: true },
+      {
+        href: `${onedataUrl}/ozw/onezone/i`,
+        caption: "Work with data",
+        className: "one-data",
+        dividerAfter: true
+      },
       // favourites will be move shortly to dashboard
       // { href: "/favourites", caption: "Favourite resources", "data-e2e": "favourites" },
       { href: `${marketplaceUrl}/profile`, caption: "Portal profile", "data-e2e": "profile" },
-      { href: "https://data.eosc.pl/ozw/onezone/i#/onedata/users", caption: "Onedata profile", className: "one-data", dividerAfter: true },
-      { href: "https://eosc.pl/documentation", caption: "Documentation" }
+      {
+        href: `${onedataUrl}/ozw/onezone/i#/onedata/users`,
+        caption: "Onedata profile",
+        className: "one-data",
+        dividerAfter: true
+      },
+      { href: `${discoveryhubUrl}/documentation`, caption: "Documentation" }
     ];
   }
 
