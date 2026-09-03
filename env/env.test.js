@@ -5,8 +5,8 @@ const defaultConfiguration = require("../configurations/configuration.developmen
 
 const discoveryhubUrl = "https://eosc.pl";
 const marketplaceUrl = "https://marketplace.eosc.pl";
-// const bosUrl = "https://bos.eosc.pl";
-// const onedataUrl = "https://data.eosc.pl";
+const bosUrl = "https://bos.eosc.pl"; // don't remove even if IDE suggest so, it could be used with different config
+const onedataUrl = "https://data.eosc.pl"; // don't remove even if IDE suggest so, it could be used with different config
 
 const environment = {
   mainHeaderConfig,
