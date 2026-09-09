@@ -283,3 +283,21 @@ Use user roles with custom provider tabs defined via `custom-tabs`:
 
 #### If the user-roles array contains one or more of the following roles admin, provider, or executive, the field provider-custom-tabs is used. Otherwise, custom-tabs is used.
 #### Both fields have default values, which can be overridden by providing a value for the respective field in the component.
+
+
+#### Providers
+
+Use `providers` attribute to display provider tabs even if there aren't any of admin/coordinator/exectuvite roles
+
+```js
+<EoscCommonMainHeader
+    username="John Doe"
+    user-roles='["someuser"]'
+    show-eosc-links="true"
+    provider-custom-tabs='[{"id":"custom-provider","name":"Provider","links":[{"caption":"Custom Provider Link","href":"https://example.com"}]}]'
+    custom-tabs='[{"id":"custom-provider","name":"Provider","links":[{"caption":"Custom User Link","href":"https://example.com"}]}]'
+    on-logout="alert('logout btn');"
+    login-url="https://marketplace.eosc.pl/users/auth/checkin"
+    providers='["some_provider_id"]'
+></EoscCommonMainHeader>
+```
