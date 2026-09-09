@@ -62,7 +62,7 @@ export default class EoscMainHeaderLogoutBtn extends Component {
   eoscLinks() {
     return [
       //{ href: dashboardUrl, caption: "Dashboard" },
-      { href: `${discoveryhubUrl}/all_collection?q=*`, caption: "Browse resources" },
+      { href: `${discoveryhubUrl}/search/all_collection?q=*`, caption: "Browse resources" },
       { href: `${marketplaceUrl}/projects`, caption: "Manage projects" },
       {
         href: `${onedataUrl}/ozw/onezone/i`,

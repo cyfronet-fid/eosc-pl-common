@@ -45,7 +45,8 @@ class EoscCommonMainHeader extends Component {
     "profile-links": PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     "custom-tabs": PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     "user-roles": PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-    "provider-custom-tabs": PropTypes.oneOfType([PropTypes.string, PropTypes.array])
+    "provider-custom-tabs": PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+    providers: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
   };
 
   static defaultProps = {
@@ -59,7 +60,8 @@ class EoscCommonMainHeader extends Component {
     "profile-links": "[]",
     "custom-tabs": "[]",
     "user-roles": "[]",
-    "provider-custom-tabs": "[]"
+    "provider-custom-tabs": "[]",
+    "providers": "[]"
   };
 
   render(props) {
@@ -72,15 +74,16 @@ class EoscCommonMainHeader extends Component {
     const rawCustomTabs = safeParseJsonArray(parsedProps.customTabs, []);
     const rawProviderCustomTabs = safeParseJsonArray(parsedProps.providerCustomTabs, []);
     parsedProps.profileLinks = safeParseJsonArray(parsedProps.profileLinks, []);
+    const providers = safeParseJsonArray(parsedProps.providers, []);
 
-    const isProvider =
+    const hasProviderRoles =
       Array.isArray(userRoles) &&
       userRoles.some((role) => role === "admin" || role === "coordinator" || role === "executive");
-
+    const isProvider = providers.length > 0;
 
     // Custom tabs override the default tabs.
     // Empty/missing values mean that the default tabs should be used.
-    if (isProvider) {
+    if (hasProviderRoles || isProvider) {
       if (Array.isArray(rawProviderCustomTabs) && rawProviderCustomTabs.length > 0) {
         parsedProps.customTabs = rawProviderCustomTabs;
       } else if (Array.isArray(rawCustomTabs) && rawCustomTabs.length > 0) {

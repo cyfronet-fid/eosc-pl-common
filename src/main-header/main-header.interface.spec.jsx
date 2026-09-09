@@ -25,6 +25,16 @@ window.location = {
   hostname: "localhost"
 };
 
+function checkDefaultValuesOfProviderTabs() {
+  expect(screen.getByText("Backoffice")).toBeInTheDocument();
+  expect(screen.getByText("Ordering system")).toBeInTheDocument();
+  expect(screen.getByText("+ Add new service")).toBeInTheDocument();
+  expect(screen.getByText("+ Add new provider")).toBeInTheDocument();
+  expect(screen.getByText("+ Add new catalogue")).toBeInTheDocument();
+  expect(screen.getByText("Documentation")).toBeInTheDocument();
+  expect(screen.queryByText("Become provider")).not.toBeInTheDocument();
+}
+
 // TODO: temporarily disable tests. Need to be fixed!!!
 describe("Main Header Component", () => {
   beforeEach(() => {
@@ -197,11 +207,13 @@ describe("Main Header Component", () => {
   });
 
   describe("Custom Tabs & User Roles", () => {
-    test("should display default user custom tabs for regular user", async () => {
+    test("should display default user tabs for regular user with no providers", async () => {
       const user = userEvent.setup();
       const props = {
         username: "Test User",
-        "logout-url": "https://test.pl"
+        "logout-url": "https://test.pl",
+        userRoles: [],
+        providers: []
       };
 
       render(<EoscCommonMainHeader {...props} />);
@@ -214,6 +226,7 @@ describe("Main Header Component", () => {
 
       expect(screen.getByText("Become provider")).toBeInTheDocument();
       expect(screen.getByText("Documentation")).toBeInTheDocument();
+      expect(screen.queryByText("Backoffice")).not.toBeInTheDocument();
     });
 
     test("should allow overriding user custom tabs for regular user", async () => {
@@ -222,7 +235,7 @@ describe("Main Header Component", () => {
         {
           id: "custom",
           name: "Custom Tab",
-          links: [{ caption: "Custom User Link", href: "https://custom.user.pl" }]
+          links: [{ caption: "Just Some Custom User Link", href: "https://custom.user.pl" }]
         }
       ]);
 
@@ -240,7 +253,7 @@ describe("Main Header Component", () => {
       const customTab = screen.getByText("Custom Tab");
       await user.click(customTab);
 
-      expect(screen.getByText("Custom User Link")).toBeInTheDocument();
+      expect(screen.getByText("Just Some Custom User Link")).toBeInTheDocument();
       expect(screen.queryByText("Become provider")).not.toBeInTheDocument();
     });
 
@@ -249,7 +262,8 @@ describe("Main Header Component", () => {
       const props = {
         username: "Admin User",
         "logout-url": "https://test.pl",
-        "user-roles": JSON.stringify(["admin"])
+        "user-roles": JSON.stringify(["admin"]),
+        providers: []
       };
 
       render(<EoscCommonMainHeader {...props} />);
@@ -260,13 +274,7 @@ describe("Main Header Component", () => {
       const providerTab = screen.getByText("Provider");
       await user.click(providerTab);
 
-      expect(screen.getByText("Backoffice")).toBeInTheDocument();
-      expect(screen.getByText("Ordering system")).toBeInTheDocument();
-      expect(screen.getByText("+ Add new service")).toBeInTheDocument();
-      expect(screen.getByText("+ Add new provider")).toBeInTheDocument();
-      expect(screen.getByText("+ Add new catalogue")).toBeInTheDocument();
-      expect(screen.getByText("Documentation")).toBeInTheDocument();
-      expect(screen.queryByText("Become provider")).not.toBeInTheDocument();
+      checkDefaultValuesOfProviderTabs();
     });
 
     test("should allow overriding provider custom tabs via provider-custom-tabs", async () => {
@@ -275,7 +283,7 @@ describe("Main Header Component", () => {
         {
           id: "provider",
           name: "Provider",
-          links: [{ caption: "Custom Provider Link", href: "https://custom.provider.pl" }]
+          links: [{ caption: "Just Some Custom Provider Link", href: "https://custom.provider.pl" }]
         }
       ]);
 
@@ -294,8 +302,50 @@ describe("Main Header Component", () => {
       const providerTab = screen.getByText("Provider");
       await user.click(providerTab);
 
-      expect(screen.getByText("Custom Provider Link")).toBeInTheDocument();
+      expect(screen.getByText("Just Some Custom Provider Link")).toBeInTheDocument();
       expect(screen.queryByText("Backoffice")).not.toBeInTheDocument();
+    });
+
+    test("should display provider tabs when user has no roles but has providers", async () => {
+      const user = userEvent.setup();
+
+      const props = {
+        username: "Provider User",
+        "logout-url": "https://test.pl",
+        userRoles: JSON.stringify([]),
+        providers: JSON.stringify(["provider_id"])
+      };
+
+      render(<EoscCommonMainHeader {...props} />);
+
+      const toggle = screen.getByText("Provider User");
+      await user.click(toggle);
+
+      const providerTab = screen.getByText("Provider");
+      await user.click(providerTab);
+
+      checkDefaultValuesOfProviderTabs();
+    });
+
+    test("should display provider tabs when user has admin roles and has providers", async () => {
+      const user = userEvent.setup();
+
+      const props = {
+        username: "Provider User",
+        "logout-url": "https://test.pl",
+        userRoles: JSON.stringify(["admin", "coordinator", "executive"]),
+        providers: JSON.stringify(["provider_id"])
+      };
+
+      render(<EoscCommonMainHeader {...props} />);
+
+      const toggle = screen.getByText("Provider User");
+      await user.click(toggle);
+
+      const providerTab = screen.getByText("Provider");
+      await user.click(providerTab);
+
+      checkDefaultValuesOfProviderTabs();
     });
   });
 });
