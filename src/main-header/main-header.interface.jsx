@@ -8,6 +8,7 @@ import { isJsScript } from "../../core/callback.validators";
 import { renderComponent } from "../../core/render";
 import { fieldsToCamelCase, usePropTypes } from "../../core/utils";
 import RWD from "../../core/rwd.hoc";
+import { discoveryhubUrl } from "../../env/env.js";
 
 
 function safeParseJsonArray(value) {
@@ -111,7 +112,7 @@ class EoscCommonMainHeader extends Component {
             {/*<nav className={"eosc-common top demo"}>*/}
             <div className="container">
               <div className="left-links">
-                <a href="https://eosc.pl/" className="header-logo"></a>
+                <a href={discoveryhubUrl} className="header-logo"></a>
               </div>
 
               <input className="menu-btn" type="checkbox" id="menu-btn" />

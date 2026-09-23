@@ -1,7 +1,7 @@
 import EoscMainHeaderLogoutBtn from "./main-header-logout-btn.component";
 import EoscMainHeaderLoginBtn from "./main-header-login-btn.component";
 
-const BROWSE_RESOURCES_HOSTS = ["eosc.pl", "marketplace.eosc.pl"];
+const BROWSE_RESOURCES_HOSTS = ["eosc.pl", "https://beta-pl-discovery-hub.docker-fid.grid.cyf-kr.edu.pl/", "https://beta-pl-marketplace.docker-fid.grid.cyf-kr.edu.pl/", "marketplace.eosc.pl"];
 
 function parseUrl(url) {
   try {
