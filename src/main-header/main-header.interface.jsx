@@ -108,6 +108,7 @@ class EoscCommonMainHeader extends Component {
       <RWD showOn={["lg", "xl", "md", "sm", "xsm"]}>
         <div class="commons-header">
           <nav className={`eosc-common top ${environment.production ? "" : "demo"}`}>
+            {/*<nav className={"eosc-common top demo"}>*/}
             <div className="container">
               <div className="left-links">
                 <a href="https://eosc.pl/" className="header-logo"></a>
