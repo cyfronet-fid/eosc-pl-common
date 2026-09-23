@@ -3,8 +3,8 @@ const mainFooterConfig = require("../configurations/main-footer.development.conf
 const totopWrapperConfig = require("../configurations/totop-wrapper.development.json");
 const defaultConfiguration = require("../configurations/configuration.development.json");
 
-export const discoveryhubUrl = "https://eosc.pl";
-export const marketplaceUrl = "https://marketplace.eosc.pl";
+export const discoveryhubUrl = "https://beta-pl-discovery-hub.docker-fid.grid.cyf-kr.edu.pl";
+export const marketplaceUrl = "https://beta-pl-marketplace.docker-fid.grid.cyf-kr.edu.pl";
 export const bosUrl = "https://bos.eosc.pl";
 export const onedataUrl = "https://data.eosc.pl"; // don't remove even if IDE suggest so, it could be used with different config
 
