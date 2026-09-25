@@ -41,6 +41,8 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: us-east-1
+          # AWS CLI v2 uses its own CA bundle; point it at the system store
+          AWS_CA_BUNDLE: /etc/ssl/certs/ca-certificates.crt
           # newer AWS CLI adds checksums that Ceph RGW may reject
           AWS_REQUEST_CHECKSUM_CALCULATION: when_required
           AWS_RESPONSE_CHECKSUM_VALIDATION: when_required
