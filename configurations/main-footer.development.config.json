@@ -6,15 +6,15 @@
       "navBtns": [
         {
           "label": "Browse resources",
-          "url": "https://eosc.pl/search/all_collection?q=*"
+          "url": "https://beta-pl-discovery-hub.docker-fid.grid.cyf-kr.edu.pl/search/all_collection?q=*"
         },
         {
           "label": "Your projects",
-          "url": "https://marketplace.eosc.pl/projects"
+          "url": "https://beta-pl-marketplace.docker-fid.grid.cyf-kr.edu.pl/projects"
         },
         {
           "label": "User documentations",
-          "url": "https://marketplace.eosc.pl/user_documentation"
+          "url": "https://beta-pl-marketplace.docker-fid.grid.cyf-kr.edu.pl/user_documentation"
         }
       ]
     },
@@ -24,15 +24,15 @@
       "navBtns": [
         {
           "label": "Backoffice",
-          "url": "https://marketplace.eosc.pl/backoffice/services"
+          "url": "https://beta-pl-marketplace.docker-fid.grid.cyf-kr.edu.pl/backoffice/services"
         },
         {
           "label": "Become a provider",
-          "url": "https://marketplace.eosc.pl/backoffice/providers"
+          "url": "https://beta-pl-marketplace.docker-fid.grid.cyf-kr.edu.pl/backoffice/providers"
         },
         {
           "label": "Marketplace API",
-          "url": "https://marketplace.eosc.pl/api_docs"
+          "url": "https://beta-pl-marketplace.docker-fid.grid.cyf-kr.edu.pl/api_docs"
         }
       ]
     },

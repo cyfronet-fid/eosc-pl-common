@@ -32,10 +32,11 @@ class EoscCommonMainFooter extends Component {
   };
 
   render(props) {
-    const { production, termsOfUse, privacyPolicy, logoPack } = fieldsToCamelCase(usePropTypes(props, EoscCommonMainFooter));
+    const { termsOfUse, privacyPolicy, logoPack } = fieldsToCamelCase(usePropTypes(props, EoscCommonMainFooter));
     return (
       <div>
-        <footer className={`eosc-common footer pt-3 pb-3 ${production ? "" : "demo"}`}>
+        {/*<footer className={`eosc-common footer pt-3 pb-3 ${production ? "" : "demo"}`}>*/}
+        <footer className={"eosc-common footer pt-3 pb-3 demo"}>
           <div className="container">
             <EoscMainFooterCols termsOfUse={termsOfUse} privacyPolicy={privacyPolicy} />
           </div>
