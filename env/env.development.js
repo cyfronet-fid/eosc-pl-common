@@ -14,6 +14,7 @@ export const environment = {
   defaultConfiguration,
   totopWrapperConfig,
   production: false,
+  showDemoBadge: true,
   windowTagName: "eosccommon",
   customUserTabs: [
     {

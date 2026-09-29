@@ -25,6 +25,7 @@ class EoscCommonMainFooter extends Component {
 
   static defaultProps = {
     production: environment.production,
+    showDemoBadge: environment.showDemoBadge,
     socialIcons: environment.mainFooterConfig.socials,
     termsOfUse: "https://eosc.pl/terms-of-use",
     privacyPolicy: "https://eosc.pl/privacy-policy",
@@ -32,10 +33,11 @@ class EoscCommonMainFooter extends Component {
   };
 
   render(props) {
-    const { termsOfUse, privacyPolicy, logoPack } = fieldsToCamelCase(usePropTypes(props, EoscCommonMainFooter));
+    const { showDemoBadge, termsOfUse, privacyPolicy, logoPack } =
+      fieldsToCamelCase(usePropTypes(props, EoscCommonMainFooter));
     return (
       <div>
-        <footer className={"eosc-common footer pt-3 pb-3 demo"}>
+        <footer className={`eosc-common footer pt-3 pb-3 ${showDemoBadge ? "demo" : ""}`}>
           <div className="container">
             <EoscMainFooterCols termsOfUse={termsOfUse} privacyPolicy={privacyPolicy} />
           </div>
