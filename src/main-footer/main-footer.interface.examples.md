@@ -74,7 +74,7 @@ Render using build in tools
 <EoscCommonMainFooter></EoscCommonMainFooter>
 ```
 
-### Custom Privacy Policy and Terms of Use
+### Custom User Access Policy and Acceptable Use Policy
 
 ```js
 <EoscCommonMainFooter

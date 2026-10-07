@@ -13,8 +13,8 @@
           "url": "https://beta-pl-marketplace.docker-fid.grid.cyf-kr.edu.pl/projects"
         },
         {
-          "label": "User documentations",
-          "url": "https://beta-pl-marketplace.docker-fid.grid.cyf-kr.edu.pl/user_documentation"
+          "label": "User documentation",
+          "url": "https://beta-pl-discovery-hub.docker-fid.grid.cyf-kr.edu.pl/documentation"
         }
       ]
     },
@@ -40,19 +40,23 @@
       "label": "Partners",
       "url": "#",
       "navBtns": [
-        {"label": "Narodowe centrum Nauki",
-        "url": "https://ncn.gov.pl/"},
+        {"label": "National Science Centre",
+        "url": "https://ncn.gov.pl/en"},
         {
-          "label": "ACK Cyfronet AGH",
-          "url": "https://www.cyfronet.pl/"
+          "label": "ACC Cyfronet AGH",
+          "url": "https://www.cyfronet.pl/en"
         },
         {
-          "label": "Politechnika Gdańska",
-          "url": "https://pg.edu.pl/"
+          "label": "Gdańsk University of Technology",
+          "url": "https://pg.edu.pl/en"
         },
         {
-          "label": "Uniwersytet Warszawski",
-          "url": "https://www.uw.edu.pl/"
+          "label": "University of Warsaw",
+          "url": "https://en.uw.edu.pl/"
+        },
+        {
+          "label": "Institute of Oceanology PAN",
+          "url": "https://www.iopan.pl/en/"
         }
       ]
     },
