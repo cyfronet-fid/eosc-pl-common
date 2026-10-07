@@ -90,7 +90,13 @@ class EoscCommonMainHeader extends Component {
       } else if (Array.isArray(rawCustomTabs) && rawCustomTabs.length > 0) {
         parsedProps.customTabs = rawCustomTabs;
       } else {
-        parsedProps.customTabs = environment.customProviderTabs;
+        parsedProps.customTabs = environment.customProviderTabs.map((tab) => ({
+          ...tab,
+          links: tab.links.filter(
+            (link) => link.caption !== "Admin" || userRoles.includes("admin")
+          )
+        }));
+
       }
     } else {
       if (Array.isArray(rawCustomTabs) && rawCustomTabs.length > 0) {
