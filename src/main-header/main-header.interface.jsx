@@ -96,7 +96,6 @@ class EoscCommonMainHeader extends Component {
             (link) => link.caption !== "Admin" || userRoles.includes("admin")
           )
         }));
-
       }
     } else {
       if (Array.isArray(rawCustomTabs) && rawCustomTabs.length > 0) {
