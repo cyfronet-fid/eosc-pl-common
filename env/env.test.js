@@ -53,7 +53,7 @@ const environment = {
         },
         {
           caption: "+ Add new provider",
-          href: `${marketplaceUrl}/backoffice/providers/new/wizard`
+          href: `${marketplaceUrl}/backoffice/providers/new`
         },
         {
           caption: "+ Add new catalogue",
