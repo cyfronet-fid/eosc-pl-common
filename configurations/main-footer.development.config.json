@@ -27,10 +27,6 @@
           "url": "https://beta-pl-marketplace.docker-fid.grid.cyf-kr.edu.pl/backoffice/services"
         },
         {
-          "label": "Become a provider",
-          "url": "https://beta-pl-marketplace.docker-fid.grid.cyf-kr.edu.pl/backoffice/providers"
-        },
-        {
           "label": "Marketplace API",
           "url": "https://beta-pl-marketplace.docker-fid.grid.cyf-kr.edu.pl/api_docs"
         }
@@ -67,14 +63,6 @@
         {
           "label": "contact@eosc.pl",
           "url": "mailto:contact@eosc.pl"
-        },
-        {
-          "label": "onboarding@eosc.pl",
-          "url": "mailto:onboarding@eosc.pl"
-        },
-        {
-          "label": "support@eosc.pl",
-          "url": "mailto:support@eosc.pl"
         }
       ]
     }
