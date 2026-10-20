@@ -49,28 +49,30 @@ describe("Main Header Component", () => {
     window.location.href = null;
   });
 
-  test.skip("should run on logout script", async () => {
+  test("should run on logout script", async () => {
     const user = userEvent.setup();
     const consoleLogSpy = jest.spyOn(console, "log");
     const props = {
       username: "username",
-      "loginUrl": "https://test.pl",
-      "onLogout": "console.log('test')"
+      "login-url": "https://test.pl",
+      "logout-url": "https://test.pl",
+      "on-logout": "console.log('test')"
     };
 
     render(<EoscCommonMainHeader {...props} />);
 
-    expect(screen.getByText("My EOSC")).toBeInTheDocument();
+    const toggle = screen.getByText("username");
+    await user.click(toggle);
 
-    const logoutLink = screen.getByText("Logout").closest("a");
-    await user.click(logoutLink);
+    const logoutLink = await screen.findByText("Logout");
+    await user.click(logoutLink.closest("a"));
 
     await waitFor(() => {
       expect(consoleLogSpy).toHaveBeenCalledWith("test");
     });
   });
 
-  test.skip("should run on login script", async () => {
+  test("should run on login script", async () => {
     const user = userEvent.setup();
     const consoleLogSpy = jest.spyOn(console, "log");
     const props = {
@@ -91,7 +93,7 @@ describe("Main Header Component", () => {
     });
   });
 
-  test.skip("should display all hrefs", () => {
+  test("should display all hrefs", () => {
     const props = {
       username: "",
       "logout-url": "https://test.pl",
