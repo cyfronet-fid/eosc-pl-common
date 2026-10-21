@@ -61,6 +61,11 @@ const environment = {
           dividerAfter: true
         },
         {
+          caption: "Admin",
+          href: `${marketplaceUrl}/admin`,
+          dividerAfter: true
+        },
+        {
           caption: "Documentation",
           href: `${discoveryhubUrl}/documentation`
         }

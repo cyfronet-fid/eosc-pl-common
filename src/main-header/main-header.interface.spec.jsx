@@ -25,7 +25,7 @@ window.location = {
   hostname: "localhost"
 };
 
-function checkDefaultValuesOfProviderTabs() {
+function checkDefaultValuesOfProviderTabs(shouldDisplayAdmin = true) {
   expect(screen.getByText("Backoffice")).toBeInTheDocument();
   expect(screen.getByText("Ordering system")).toBeInTheDocument();
   expect(screen.getByText("+ Add new service")).toBeInTheDocument();
@@ -33,6 +33,12 @@ function checkDefaultValuesOfProviderTabs() {
   expect(screen.getByText("+ Add new catalogue")).toBeInTheDocument();
   expect(screen.getByText("Documentation")).toBeInTheDocument();
   expect(screen.queryByText("Become provider")).not.toBeInTheDocument();
+
+  if (shouldDisplayAdmin) {
+    expect(screen.getByText("Admin")).toBeInTheDocument();
+  } else {
+    expect(screen.queryByText("Admin")).not.toBeInTheDocument();
+  }
 }
 
 // TODO: temporarily disable tests. Need to be fixed!!!
@@ -43,28 +49,30 @@ describe("Main Header Component", () => {
     window.location.href = null;
   });
 
-  test.skip("should run on logout script", async () => {
+  test("should run on logout script", async () => {
     const user = userEvent.setup();
     const consoleLogSpy = jest.spyOn(console, "log");
     const props = {
       username: "username",
-      "loginUrl": "https://test.pl",
-      "onLogout": "console.log('test')"
+      "login-url": "https://test.pl",
+      "logout-url": "https://test.pl",
+      "on-logout": "console.log('test')"
     };
 
     render(<EoscCommonMainHeader {...props} />);
 
-    expect(screen.getByText("My EOSC")).toBeInTheDocument();
+    const toggle = screen.getByText("username");
+    await user.click(toggle);
 
-    const logoutLink = screen.getByText("Logout").closest("a");
-    await user.click(logoutLink);
+    const logoutLink = await screen.findByText("Logout");
+    await user.click(logoutLink.closest("a"));
 
     await waitFor(() => {
       expect(consoleLogSpy).toHaveBeenCalledWith("test");
     });
   });
 
-  test.skip("should run on login script", async () => {
+  test("should run on login script", async () => {
     const user = userEvent.setup();
     const consoleLogSpy = jest.spyOn(console, "log");
     const props = {
@@ -85,7 +93,7 @@ describe("Main Header Component", () => {
     });
   });
 
-  test.skip("should display all hrefs", () => {
+  test("should display all hrefs", () => {
     const props = {
       username: "",
       "logout-url": "https://test.pl",
@@ -324,7 +332,7 @@ describe("Main Header Component", () => {
       const providerTab = screen.getByText("Provider");
       await user.click(providerTab);
 
-      checkDefaultValuesOfProviderTabs();
+      checkDefaultValuesOfProviderTabs(false);
     });
 
     test("should display provider tabs when user has admin roles and has providers", async () => {
@@ -346,6 +354,104 @@ describe("Main Header Component", () => {
       await user.click(providerTab);
 
       checkDefaultValuesOfProviderTabs();
+    });
+
+    test("should hide Admin link from default provider tabs for user without admin role", async () => {
+      const user = userEvent.setup();
+
+      const props = {
+        username: "Provider User",
+        "logout-url": "https://test.pl",
+        userRoles: JSON.stringify([]),
+        providers: JSON.stringify(["provider_id"])
+      };
+
+      render(<EoscCommonMainHeader {...props} />);
+
+      await user.click(screen.getByText("Provider User"));
+      await user.click(screen.getByText("Provider"));
+
+      checkDefaultValuesOfProviderTabs(false);
+    });
+
+    test("should display Admin link from default provider tabs for admin user", async () => {
+      const user = userEvent.setup();
+
+      const props = {
+        username: "Admin User",
+        "logout-url": "https://test.pl",
+        "user-roles": JSON.stringify(["admin"]),
+        providers: JSON.stringify([])
+      };
+
+      render(<EoscCommonMainHeader {...props} />);
+
+      await user.click(screen.getByText("Admin User"));
+      await user.click(screen.getByText("Provider"));
+
+      checkDefaultValuesOfProviderTabs(true);
+    });
+
+    test("should hide Admin link from custom provider tabs for user without admin role", async () => {
+      const user = userEvent.setup();
+
+      const providerCustomTabs = JSON.stringify([
+        {
+          id: "provider",
+          name: "Provider",
+          links: [
+            { caption: "Custom Backoffice", href: "https://custom.pl/backoffice" },
+            { caption: "Admin", href: "https://custom.pl/admin" },
+            { caption: "Custom Documentation", href: "https://custom.pl/docs" }
+          ]
+        }
+      ]);
+
+      const props = {
+        username: "Coordinator User",
+        "logout-url": "https://test.pl",
+        "user-roles": JSON.stringify(["coordinator"]),
+        "provider-custom-tabs": providerCustomTabs
+      };
+
+      render(<EoscCommonMainHeader {...props} />);
+
+      await user.click(screen.getByText("Coordinator User"));
+      await user.click(screen.getByText("Provider"));
+
+      expect(screen.getByText("Custom Backoffice")).toBeInTheDocument();
+      expect(screen.queryByText("Admin")).not.toBeInTheDocument();
+      expect(screen.getByText("Custom Documentation")).toBeInTheDocument();
+    });
+
+    test("should display Admin link from custom provider tabs for admin user", async () => {
+      const user = userEvent.setup();
+
+      const providerCustomTabs = JSON.stringify([
+        {
+          id: "provider",
+          name: "Provider",
+          links: [
+            { caption: "Custom Backoffice", href: "https://custom.pl/backoffice" },
+            { caption: "Admin", href: "https://custom.pl/admin" }
+          ]
+        }
+      ]);
+
+      const props = {
+        username: "Admin User",
+        "logout-url": "https://test.pl",
+        "user-roles": JSON.stringify(["admin"]),
+        "provider-custom-tabs": providerCustomTabs
+      };
+
+      render(<EoscCommonMainHeader {...props} />);
+
+      await user.click(screen.getByText("Admin User"));
+      await user.click(screen.getByText("Provider"));
+
+      expect(screen.getByText("Custom Backoffice")).toBeInTheDocument();
+      expect(screen.getByText("Admin")).toBeInTheDocument();
     });
   });
 });
